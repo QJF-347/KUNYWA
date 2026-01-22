@@ -41,13 +41,6 @@ fun main() {
                 call.respond(mapOf("status" to "healthy"))
             }
             
-            get("/debug") {
-                call.respond(mapOf(
-                    "users" to users,
-                    "branches" to branches
-                ))
-            }
-            
             post("/auth/login") {
                 try {
                     val request = call.receive<LoginRequest>()
