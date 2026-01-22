@@ -139,6 +139,33 @@ fun main() {
                 }
             }
             
+            post("/create-admin") {
+                try {
+                    // Create admin user with hardcoded credentials
+                    val adminUser = User(users.size + 1, "admin", "admin")
+                    users.add(adminUser)
+                    call.respond(adminUser)
+                } catch (e: Exception) {
+                    call.respond(mapOf("error" to "Admin creation failed"))
+                }
+            }
+            
+            get("/init-admin") {
+                try {
+                    // Initialize with default admin user if not exists
+                    val existingAdmin = users.firstOrNull { it.username == "admin" }
+                    if (existingAdmin == null) {
+                        val adminUser = User(users.size + 1, "admin", "admin")
+                        users.add(adminUser)
+                        call.respond(mapOf("message" to "Admin user created", "user" to adminUser))
+                    } else {
+                        call.respond(mapOf("message" to "Admin user already exists", "user" to existingAdmin))
+                    }
+                } catch (e: Exception) {
+                    call.respond(mapOf("error" to "Admin initialization failed"))
+                }
+            }
+            
             get("/customer/branches") {
                 call.respond(branches)
             }

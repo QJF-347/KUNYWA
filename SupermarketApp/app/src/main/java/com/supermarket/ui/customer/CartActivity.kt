@@ -77,15 +77,10 @@ class CartActivity : AppCompatActivity() {
     }
     
     private fun setupObservers() {
-        // Observe CartManager using repeatOnLifecycle
-        lifecycleScope.launch {
-            repeatOnLifecycle(this) {
-                CartManager.cart.collect { cart ->
-                    cartAdapter.submitList(cart)
-                    tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
-                }
-            }
-        }
+        // Simple cart observation using CartManager
+        val cart = CartManager.cart.value
+        cartAdapter.submitList(cart)
+        tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
         
         viewModel.saleResult.observe(this) { result ->
             result.fold(
