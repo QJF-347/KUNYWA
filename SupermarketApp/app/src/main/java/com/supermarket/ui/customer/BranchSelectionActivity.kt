@@ -74,14 +74,14 @@ class BranchAdapter(
     override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): BranchViewHolder {
         val view = android.view.LayoutInflater.from(parent.context)
             .inflate(R.layout.item_branch, parent, false)
-        return BranchViewHolder(view)
+        return BranchViewHolder(view, onBranchClick)
     }
     
     override fun onBindViewHolder(holder: BranchViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
     
-    class BranchViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+    class BranchViewHolder(itemView: android.view.View, private val onBranchClick: (Branch) -> Unit) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         private val tvBranchName: TextView = itemView.findViewById(R.id.tvBranchName)
         private val tvBranchLocation: TextView = itemView.findViewById(R.id.tvBranchLocation)
         
@@ -89,7 +89,7 @@ class BranchAdapter(
             tvBranchName.text = branch.name
             tvBranchLocation.text = branch.location
             itemView.setOnClickListener {
-                // Handle click through callback
+                onBranchClick(branch)
             }
         }
     }

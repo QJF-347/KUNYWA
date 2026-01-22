@@ -55,9 +55,10 @@ class ProductListActivity : AppCompatActivity() {
     }
     
     private fun setupRecyclerView() {
-        productAdapter = ProductAdapter { product, stock ->
+        productAdapter = ProductAdapter { stock ->
+            val product = Product(stock.productId, stock.productName, stock.price)
             viewModel.addToCart(product, branchId)
-            Toast.makeText(this, "${product.name} added to cart", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "${stock.productName} added to cart", Toast.LENGTH_SHORT).show()
         }
         
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -68,8 +69,7 @@ class ProductListActivity : AppCompatActivity() {
         viewModel.branchStock.observe(this) { result ->
             result.fold(
                 onSuccess = { stockList ->
-                    val products = stockList.map { it.product }
-                    productAdapter.submitList(products)
+                    productAdapter.submitList(stockList)
                 },
                 onFailure = { error ->
                     Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
@@ -93,8 +93,8 @@ class ProductListActivity : AppCompatActivity() {
 }
 
 class ProductAdapter(
-    private val onAddToCart: (Product, Stock) -> Unit
-) : androidx.recyclerview.widget.ListAdapter<Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
+    private val onAddToCart: (Stock) -> Unit
+) : androidx.recyclerview.widget.ListAdapter<Stock, ProductAdapter.ProductViewHolder>(StockDiffCallback()) {
     
     override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): ProductViewHolder {
         val view = android.view.LayoutInflater.from(parent.context)
@@ -103,7 +103,7 @@ class ProductAdapter(
     }
     
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onAddToCart)
     }
     
     class ProductViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
@@ -111,23 +111,23 @@ class ProductAdapter(
         private val tvProductPrice: TextView = itemView.findViewById(R.id.tvProductPrice)
         private val btnAddToCart: TextView = itemView.findViewById(R.id.btnAddToCart)
         
-        fun bind(product: Product) {
-            tvProductName.text = product.name
-            tvProductPrice.text = "KES ${product.price}"
+        fun bind(stock: Stock, onAddToCart: (Stock) -> Unit) {
+            tvProductName.text = stock.productName
+            tvProductPrice.text = "KES ${stock.price}"
             
             btnAddToCart.setOnClickListener {
-                // Handle click through callback
+                onAddToCart(stock)
             }
         }
     }
 }
 
-class ProductDiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<Product>() {
-    override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
+class StockDiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<Stock>() {
+    override fun areItemsTheSame(oldItem: Stock, newItem: Stock): Boolean {
         return oldItem.id == newItem.id
     }
     
-    override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
+    override fun areContentsTheSame(oldItem: Stock, newItem: Stock): Boolean {
         return oldItem == newItem
     }
 }

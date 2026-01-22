@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-67:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-67:12
 MERGED from [androidx.databinding:viewbinding:8.13.2] /home/kali/.gradle/caches/8.13/transforms/7482376a6a17da6a7aedf0f799fccccb/transformed/jetified-viewbinding-8.13.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -76,8 +76,8 @@ ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest
 	android:name
 		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-65:19
-INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-65:19
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-66:19
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-66:19
 MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -98,100 +98,102 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8
 MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
 		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	android:roundIcon
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:15:9-54
+	android:icon
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:13:9-43
+	android:networkSecurityConfig
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:19:9-69
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:13:9-41
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:14:9-41
 	android:fullBackupContent
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:11:9-54
-	android:roundIcon
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:12:9-54
 	tools:targetApi
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:19:9-29
-	android:icon
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:12:9-43
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:20:9-29
 	android:allowBackup
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:16:9-52
-	android:networkSecurityConfig
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:18:9-69
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:17:9-52
 	android:dataExtractionRules
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:10:9-65
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:11:9-65
 	android:usesCleartextTraffic
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:17:9-45
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:18:9-45
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:9:9-47
 activity#com.supermarket.MainActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:21:9-28:20
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:22:9-29:20
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:23:13-36
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:24:13-36
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:22:13-41
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:23:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:24:13-27:29
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:25:13-28:29
 action#android.intent.action.MAIN
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:17-69
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:27:27-74
 activity#com.supermarket.ui.auth.LoginActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:30:9-32:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:31:9-33:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:32:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:33:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:31:13-50
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:32:13-50
 activity#com.supermarket.ui.auth.RegisterActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:34:9-36:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:35:9-37:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:36:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:35:13-53
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:36:13-53
 activity#com.supermarket.ui.customer.CustomerDashboardActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:38:9-40:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:39:9-41:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:40:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:41:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:39:13-66
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:40:13-66
 activity#com.supermarket.ui.customer.BranchSelectionActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:42:9-44:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:43:9-45:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:44:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:45:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:43:13-64
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:44:13-64
 activity#com.supermarket.ui.customer.ProductListActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:46:9-48:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:47:9-49:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:48:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:49:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:47:13-60
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:48:13-60
 activity#com.supermarket.ui.customer.CartActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:50:9-52:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:51:9-53:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:52:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:53:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:51:13-53
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:52:13-53
 activity#com.supermarket.ui.admin.AdminDashboardActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:54:9-56:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:55:9-57:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:56:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:55:13-60
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:56:13-60
 activity#com.supermarket.ui.admin.RestockActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:58:9-60:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:59:9-61:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:60:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:61:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:59:13-53
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:60:13-53
 activity#com.supermarket.ui.admin.ReportsActivity
-ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:62:9-64:40
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:63:9-65:40
 	android:exported
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:64:13-37
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:65:13-37
 	android:name
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:63:13-53
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:64:13-53
 uses-sdk
 INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml

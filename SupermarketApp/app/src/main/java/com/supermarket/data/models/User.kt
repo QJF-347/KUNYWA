@@ -6,15 +6,9 @@ data class User(
     @SerializedName("id")
     val id: Int,
     @SerializedName("username")
-    val username: String,
-    @SerializedName("email")
-    val email: String,
-    @SerializedName("phone")
-    val phone: String,
+    val username: String = "",
     @SerializedName("role")
-    val role: String, // "admin" or "customer"
-    @SerializedName("token")
-    val token: String? = null
+    val role: String = "customer"
 )
 
 data class LoginRequest(

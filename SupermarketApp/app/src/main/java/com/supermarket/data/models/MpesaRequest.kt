@@ -3,13 +3,13 @@ package com.supermarket.data.models
 import com.google.gson.annotations.SerializedName
 
 data class MpesaRequest(
-    @SerializedName("phone_number")
+    @SerializedName("phoneNumber")
     val phoneNumber: String,
     @SerializedName("amount")
     val amount: Double,
-    @SerializedName("account_reference")
+    @SerializedName("accountReference")
     val accountReference: String,
-    @SerializedName("transaction_desc")
+    @SerializedName("transactionDesc")
     val transactionDesc: String
 )
 
@@ -18,21 +18,28 @@ data class MpesaResponse(
     val success: Boolean,
     @SerializedName("message")
     val message: String,
-    @SerializedName("checkout_request_id")
-    val checkoutRequestId: String? = null,
-    @SerializedName("merchant_request_id")
-    val merchantRequestId: String? = null
+    @SerializedName("checkoutRequestId")
+    val checkoutRequestId: String? = null
 )
 
 data class SaleRequest(
-    @SerializedName("branch_id")
+    @SerializedName("branchId")
     val branchId: Int,
     @SerializedName("items")
     val items: List<SaleItem>
 )
 
 data class SaleItem(
-    @SerializedName("product_id")
+    @SerializedName("productId")
+    val productId: Int,
+    @SerializedName("quantity")
+    val quantity: Int
+)
+
+data class RestockRequest(
+    @SerializedName("branchId")
+    val branchId: Int,
+    @SerializedName("productId")
     val productId: Int,
     @SerializedName("quantity")
     val quantity: Int

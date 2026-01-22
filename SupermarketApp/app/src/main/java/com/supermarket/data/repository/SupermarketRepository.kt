@@ -2,9 +2,6 @@ package com.supermarket.data.repository
 
 import com.supermarket.data.models.*
 import com.supermarket.data.remote.ApiClient
-import com.supermarket.data.remote.SaleRequest
-import com.supermarket.data.remote.RestockRequest
-import com.supermarket.data.remote.MpesaRequest
 
 class SupermarketRepository {
     

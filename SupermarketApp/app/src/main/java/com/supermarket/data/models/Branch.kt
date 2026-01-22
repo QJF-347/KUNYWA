@@ -14,12 +14,12 @@ data class Branch(
 data class Stock(
     @SerializedName("id")
     val id: Int,
-    @SerializedName("branch_id")
-    val branchId: Int,
-    @SerializedName("product_id")
+    @SerializedName("productId")
     val productId: Int,
+    @SerializedName("productName")
+    val productName: String,
     @SerializedName("quantity")
     val quantity: Int,
-    @SerializedName("product")
-    val product: Product
+    @SerializedName("price")
+    val price: Double
 )

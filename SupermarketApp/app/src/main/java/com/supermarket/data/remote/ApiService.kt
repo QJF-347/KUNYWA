@@ -37,21 +37,3 @@ interface ApiService {
     @GET("mpesa/status/{checkoutRequestId}")
     suspend fun checkPaymentStatus(@Path("checkoutRequestId") checkoutRequestId: String): Response<MpesaResponse>
 }
-
-data class RestockRequest(
-    val branchId: Int,
-    val productId: Int,
-    val quantity: Int
-)
-
-data class SaleRequest(
-    val branchId: Int,
-    val items: List<SaleItem>
-)
-
-data class MpesaRequest(
-    val phoneNumber: String,
-    val amount: Double,
-    val accountReference: String,
-    val transactionDesc: String
-)

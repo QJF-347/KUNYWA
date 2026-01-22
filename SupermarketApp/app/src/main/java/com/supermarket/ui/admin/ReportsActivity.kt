@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.supermarket.R
-import com.supermarket.data.models.SalesReport
+import com.supermarket.data.models.OverallReport
 
 class ReportsActivity : AppCompatActivity() {
     
@@ -18,7 +18,6 @@ class ReportsActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var tvGrandTotal: TextView
     private lateinit var btnRefresh: Button
-    private lateinit var reportsAdapter: ReportsAdapter
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,17 +41,16 @@ class ReportsActivity : AppCompatActivity() {
     }
     
     private fun setupRecyclerView() {
-        reportsAdapter = ReportsAdapter()
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = reportsAdapter
+        // Since we only have summary data, we don't need a RecyclerView for now
+        recyclerView.visibility = android.view.View.GONE
     }
     
     private fun setupObservers() {
         viewModel.reports.observe(this) { result ->
             result.fold(
                 onSuccess = { report ->
-                    reportsAdapter.submitList(report.salesByProduct)
-                    tvGrandTotal.text = "Grand Total Income: KES ${report.grandTotalIncome}"
+                    // For now, just show the total sales and orders
+                    tvGrandTotal.text = "Total Sales: KES ${report.totalSales}, Orders: ${report.totalOrders}"
                 },
                 onFailure = { error ->
                     tvGrandTotal.text = "Error loading reports"
@@ -70,40 +68,5 @@ class ReportsActivity : AppCompatActivity() {
         btnRefresh.setOnClickListener {
             viewModel.loadReports()
         }
-    }
-}
-
-class ReportsAdapter : androidx.recyclerview.widget.ListAdapter<SalesReport, ReportsAdapter.ReportsViewHolder>(ReportsDiffCallback()) {
-    
-    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): ReportsViewHolder {
-        val view = android.view.LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_report, parent, false)
-        return ReportsViewHolder(view)
-    }
-    
-    override fun onBindViewHolder(holder: ReportsViewHolder, position: Int) {
-        holder.bind(getItem(position))
-    }
-    
-    class ReportsViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
-        private val tvProductName: TextView = itemView.findViewById(R.id.tvProductName)
-        private val tvTotalQuantity: TextView = itemView.findViewById(R.id.tvTotalQuantity)
-        private val tvTotalIncome: TextView = itemView.findViewById(R.id.tvTotalIncome)
-        
-        fun bind(report: SalesReport) {
-            tvProductName.text = report.productName
-            tvTotalQuantity.text = "Units Sold: ${report.totalQuantity}"
-            tvTotalIncome.text = "Income: KES ${report.totalIncome}"
-        }
-    }
-}
-
-class ReportsDiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<SalesReport>() {
-    override fun areItemsTheSame(oldItem: SalesReport, newItem: SalesReport): Boolean {
-        return oldItem.productName == newItem.productName
-    }
-    
-    override fun areContentsTheSame(oldItem: SalesReport, newItem: SalesReport): Boolean {
-        return oldItem == newItem
     }
 }
