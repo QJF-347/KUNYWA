@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.serialization") version "1.9.22"
     application
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "com.supermarket"
@@ -49,12 +50,4 @@ application {
 
 kotlin {
     jvmToolchain(17)
-}
-
-tasks.withType<Jar> {
-    manifest {
-        attributes["Main-Class"] = "com.supermarket.ApplicationKt"
-    }
-    from(configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) })
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
