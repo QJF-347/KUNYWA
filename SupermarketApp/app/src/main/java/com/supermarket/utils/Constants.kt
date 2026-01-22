@@ -1,7 +1,7 @@
 package com.supermarket.utils
 
 object Constants {
-    const val BASE_URL = "https://your-backend-url.com/" // Replace with deployed backend URL
+    const val BASE_URL = "https://kunywa-bakend.onrender.com/" // Deployed backend URL
     
     // SharedPreferences keys
     const val PREF_NAME = "SupermarketPrefs"

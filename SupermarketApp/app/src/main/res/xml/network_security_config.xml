@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="false">
-        <domain includeSubdomains="true">your-backend-url.com</domain>
+        <domain includeSubdomains="true">kunywa-bakend.onrender.com</domain>
     </domain-config>
 </network-security-config>
