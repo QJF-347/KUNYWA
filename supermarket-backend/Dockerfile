@@ -2,13 +2,11 @@
 FROM gradle:8.5-jdk17 AS build
 WORKDIR /app
 
-# Copy Gradle wrapper from repo root
-COPY gradlew .
-COPY gradle gradle
-RUN chmod +x gradlew
+# Copy the entire backend project
+COPY . .
 
-# Copy backend code into /app
-COPY supermarket-backend/ .
+# Make gradlew executable
+RUN chmod +x gradlew
 
 # Build the backend
 RUN ./gradlew build --no-daemon
