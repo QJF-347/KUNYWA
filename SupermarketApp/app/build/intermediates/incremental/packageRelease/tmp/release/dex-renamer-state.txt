@@ -1,4 +1,4 @@
-#Fri Jan 23 01:43:46 EAT 2026
+#Fri Jan 23 02:11:20 EAT 2026
 base.1=/home/kali/Desktop/KUNYWA/SupermarketApp/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.1=classes2.dex
 base.0=/home/kali/Desktop/KUNYWA/SupermarketApp/app/build/intermediates/dex/release/mergeDexRelease/classes.dex

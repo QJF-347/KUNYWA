@@ -115,6 +115,16 @@ fun main() {
                 call.respond(mapOf("status" to "healthy"))
             }
             
+            get("/create-admin-now") {
+                try {
+                    val adminUser = User(1, "admin", "admin")
+                    users.add(adminUser)
+                    call.respond(mapOf("message" to "Admin user created successfully", "user" to adminUser))
+                } catch (e: Exception) {
+                    call.respond(mapOf("error" to "Failed to create admin: ${e.message}"))
+                }
+            }
+            
             get("/debug") {
                 val debugResponse = DebugResponse(users, branches)
                 call.respond(debugResponse)

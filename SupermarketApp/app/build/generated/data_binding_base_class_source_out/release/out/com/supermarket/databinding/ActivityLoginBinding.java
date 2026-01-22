@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final Button btnLogin;
@@ -37,7 +37,7 @@ public final class ActivityLoginBinding implements ViewBinding {
   @NonNull
   public final TextView tvRegister;
 
-  private ActivityLoginBinding(@NonNull LinearLayout rootView, @NonNull Button btnLogin,
+  private ActivityLoginBinding(@NonNull RelativeLayout rootView, @NonNull Button btnLogin,
       @NonNull EditText etPassword, @NonNull EditText etUsername, @NonNull ProgressBar progressBar,
       @NonNull TextView tvRegister) {
     this.rootView = rootView;
@@ -50,7 +50,7 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -105,7 +105,7 @@ public final class ActivityLoginBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityLoginBinding((LinearLayout) rootView, btnLogin, etPassword, etUsername,
+      return new ActivityLoginBinding((RelativeLayout) rootView, btnLogin, etPassword, etUsername,
           progressBar, tvRegister);
     }
     String missingId = rootView.getResources().getResourceName(id);

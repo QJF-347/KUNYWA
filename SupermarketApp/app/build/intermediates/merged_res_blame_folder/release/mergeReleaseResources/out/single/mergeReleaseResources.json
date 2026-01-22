@@ -28,6 +28,10 @@
         "source": "com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "com.supermarket.app-release-41:/drawable_login_bg_picture.jpeg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/login_bg_picture.jpeg"
+    },
+    {
         "merged": "com.supermarket.app-release-41:/layout_activity_product_list.xml.flat",
         "source": "com.supermarket.app-main-42:/layout/activity_product_list.xml"
     },
