@@ -113,25 +113,35 @@ class CartActivity : AppCompatActivity() {
                 phoneNumber = userPhone,
                 amount = totalAmount,
                 accountReference = "SUPERMARKET-$branchId",
-                transactionDesc = "Purchase at $branchName"
-            ) { response ->
-                if (response.success) {
-                    // Check payment status
-                    checkPaymentStatus(response.checkoutRequestId ?: "")
+                transactionDesc = "Purchase at $branchName",
+                onPaymentInitiated = { response ->
+                    if (response.success) {
+                        // Check payment status
+                        checkPaymentStatus(response.checkoutRequestId ?: "")
+                    }
+                },
+                onPaymentFailed = { error ->
+                    Toast.makeText(this, "Payment initiation failed: $error", Toast.LENGTH_LONG).show()
                 }
-            }
+            )
         }
     }
     
     private fun checkPaymentStatus(checkoutRequestId: String) {
-        mpesaManager.checkPaymentStatus(checkoutRequestId) { response ->
-            if (response.success && response.message.contains("completed", ignoreCase = true)) {
-                // Payment successful, complete the sale
-                viewModel.checkout(branchId)
-            } else {
-                Toast.makeText(this, "Payment failed or incomplete", Toast.LENGTH_LONG).show()
+        mpesaManager.checkPaymentStatus(
+            checkoutRequestId = checkoutRequestId,
+            onStatusReceived = { response ->
+                if (response.success && response.message.contains("completed", ignoreCase = true)) {
+                    // Payment successful, complete the sale
+                    viewModel.checkout(branchId)
+                } else {
+                    Toast.makeText(this, "Payment failed or incomplete", Toast.LENGTH_LONG).show()
+                }
+            },
+            onStatusCheckFailed = { error ->
+                Toast.makeText(this, "Status check failed: $error", Toast.LENGTH_LONG).show()
             }
-        }
+        )
     }
 }
 

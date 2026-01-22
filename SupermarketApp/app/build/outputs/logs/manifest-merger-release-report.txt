@@ -1,0 +1,410 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:1-66:12
+MERGED from [androidx.databinding:viewbinding:8.13.2] /home/kali/.gradle/caches/8.13/transforms/7482376a6a17da6a7aedf0f799fccccb/transformed/jetified-viewbinding-8.13.2/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/kali/.gradle/caches/8.13/transforms/5655257b9db20a39b7439911d8a506bd/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.preference:preference-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/9daf88e2900c1432bdffe66821a601a0/transformed/jetified-preference-ktx-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.preference:preference:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5af3d14718a33ff34f84a2692bb826ad/transformed/preference-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/kali/.gradle/caches/8.13/transforms/7e1942612b77e912c25405e509f1a09d/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/kali/.gradle/caches/8.13/transforms/cdd3853fd43f3bc1373b4a82f4de97b3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/kali/.gradle/caches/8.13/transforms/57caecf3f0e4eb22d094c77663854d84/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /home/kali/.gradle/caches/8.13/transforms/5920f6aa649f20b387d9020e3b05d0d2/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.8.2] /home/kali/.gradle/caches/8.13/transforms/bbf6706ddb6015a9da17be187dd6867e/transformed/jetified-activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/kali/.gradle/caches/8.13/transforms/6e24dacd79359742e280b5a87de60f33/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/kali/.gradle/caches/8.13/transforms/77b995c059b0a4a18e82e47c2d8fd0da/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/kali/.gradle/caches/8.13/transforms/7433449ffa9beacd64bd0e4cbc92b6b6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/kali/.gradle/caches/8.13/transforms/2196778c6a01d44cafe80f11d3b34933/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/kali/.gradle/caches/8.13/transforms/203f8e81769c2433d2601809984042a0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/kali/.gradle/caches/8.13/transforms/b1a4f99c1c424e5ec9884f3e440572fe/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/kali/.gradle/caches/8.13/transforms/8e8c749cecf8f66abc02dc214c133db1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/83fe2f19b49eccf18ad6e1f28630ff23/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kali/.gradle/caches/8.13/transforms/908335f57629b6c8e6f437f979fd2578/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/kali/.gradle/caches/8.13/transforms/97015edba74429c43f8be6cc307dd3d9/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/f637e4c8c5b80d5e98dc7fc9bd4da2f1/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kali/.gradle/caches/8.13/transforms/bf9495c0fd0979d87763cb0d489fb0e0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/1a4ea4360423ed48866aab91cf37bcd9/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] /home/kali/.gradle/caches/8.13/transforms/62778fb0fd48805760341ad431bbc2d1/transformed/transition-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5e474ee4ea08ed6bedf64d8d5af59fdc/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/kali/.gradle/caches/8.13/transforms/318bcd233d645a2c21f180bd0aceb40d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/kali/.gradle/caches/8.13/transforms/6efdb42d1131eaa2df20adc4e5129c10/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/d6957c1096b90fa7401d02591c70924c/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/kali/.gradle/caches/8.13/transforms/b884c9374f540b82f9f8bbe156f5b2ed/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a63007f3e22b30692c3459853389032b/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/kali/.gradle/caches/8.13/transforms/c5487043f206bc50bfc4bd4bb46ac85f/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/kali/.gradle/caches/8.13/transforms/25c760993a03d47d0e87845b13350c37/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/df1d7d88fb801ca5b8a6d11cf941e179/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a8a9927cad20a057f0d27410021ce95f/transformed/jetified-lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a37d2a8a30eddbbb846d20d1bf38ca21/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core-ktx:1.12.0] /home/kali/.gradle/caches/8.13/transforms/4e2b1dcd6d2150355d788d73a5a41393/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/kali/.gradle/caches/8.13/transforms/6f4942073681c0543fcdc07282652c11/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kali/.gradle/caches/8.13/transforms/13d51e5457c376005d1b24242e0c0d0f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6a74a29858f055468c2a6e53c76879eb/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6b429a70900155cec0675db5403a0841/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/kali/.gradle/caches/8.13/transforms/f4b953af02ab1bcd1bf2cfdd8ef3c553/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/kali/.gradle/caches/8.13/transforms/b6a259e820fc9665bcf5aadec2cd9f49/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/kali/.gradle/caches/8.13/transforms/a167e0f61055fa7698d295b479cfc203/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kali/.gradle/caches/8.13/transforms/442f320bb15b99c9b891157eddcf3f32/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/64e8679a6227b09916952fe4ce828db0/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/kali/.gradle/caches/8.13/transforms/5720082a2062fe3271c9a2f67580d8c9/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:6:22-76
+application
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-65:19
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:8:5-65:19
+MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/kali/.gradle/caches/8.13/transforms/f4b953af02ab1bcd1bf2cfdd8ef3c553/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/kali/.gradle/caches/8.13/transforms/f4b953af02ab1bcd1bf2cfdd8ef3c553/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:13:9-41
+	android:fullBackupContent
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:11:9-54
+	android:roundIcon
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:14:9-54
+	tools:targetApi
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:19:9-29
+	android:icon
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:16:9-52
+	android:networkSecurityConfig
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:18:9-69
+	android:dataExtractionRules
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:10:9-65
+	android:usesCleartextTraffic
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:17:9-45
+activity#com.supermarket.MainActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:21:9-28:20
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:23:13-36
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:22:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:24:13-27:29
+action#android.intent.action.MAIN
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:26:27-74
+activity#com.supermarket.ui.auth.LoginActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:30:9-32:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:31:13-50
+activity#com.supermarket.ui.auth.RegisterActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:34:9-36:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:36:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:35:13-53
+activity#com.supermarket.ui.customer.CustomerDashboardActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:38:9-40:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:40:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:39:13-66
+activity#com.supermarket.ui.customer.BranchSelectionActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:42:9-44:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:44:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:43:13-64
+activity#com.supermarket.ui.customer.ProductListActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:46:9-48:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:48:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:47:13-60
+activity#com.supermarket.ui.customer.CartActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:50:9-52:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:51:13-53
+activity#com.supermarket.ui.admin.AdminDashboardActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:54:9-56:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:56:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:55:13-60
+activity#com.supermarket.ui.admin.RestockActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:58:9-60:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:60:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:59:13-53
+activity#com.supermarket.ui.admin.ReportsActivity
+ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:62:9-64:40
+	android:exported
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:64:13-37
+	android:name
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:63:13-53
+uses-sdk
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.13.2] /home/kali/.gradle/caches/8.13/transforms/7482376a6a17da6a7aedf0f799fccccb/transformed/jetified-viewbinding-8.13.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.13.2] /home/kali/.gradle/caches/8.13/transforms/7482376a6a17da6a7aedf0f799fccccb/transformed/jetified-viewbinding-8.13.2/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.11.0] /home/kali/.gradle/caches/8.13/transforms/467bb4f7760916e1842966ee07392663/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/kali/.gradle/caches/8.13/transforms/4b015a54619ccf2c85e1580e0e3ad68b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/kali/.gradle/caches/8.13/transforms/5655257b9db20a39b7439911d8a506bd/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/kali/.gradle/caches/8.13/transforms/5655257b9db20a39b7439911d8a506bd/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.preference:preference-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/9daf88e2900c1432bdffe66821a601a0/transformed/jetified-preference-ktx-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/9daf88e2900c1432bdffe66821a601a0/transformed/jetified-preference-ktx-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5af3d14718a33ff34f84a2692bb826ad/transformed/preference-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5af3d14718a33ff34f84a2692bb826ad/transformed/preference-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/kali/.gradle/caches/8.13/transforms/7e1942612b77e912c25405e509f1a09d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] /home/kali/.gradle/caches/8.13/transforms/7e1942612b77e912c25405e509f1a09d/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/kali/.gradle/caches/8.13/transforms/cdd3853fd43f3bc1373b4a82f4de97b3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/kali/.gradle/caches/8.13/transforms/cdd3853fd43f3bc1373b4a82f4de97b3/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/kali/.gradle/caches/8.13/transforms/57caecf3f0e4eb22d094c77663854d84/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/kali/.gradle/caches/8.13/transforms/57caecf3f0e4eb22d094c77663854d84/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/kali/.gradle/caches/8.13/transforms/5920f6aa649f20b387d9020e3b05d0d2/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /home/kali/.gradle/caches/8.13/transforms/5920f6aa649f20b387d9020e3b05d0d2/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.8.2] /home/kali/.gradle/caches/8.13/transforms/bbf6706ddb6015a9da17be187dd6867e/transformed/jetified-activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/kali/.gradle/caches/8.13/transforms/bbf6706ddb6015a9da17be187dd6867e/transformed/jetified-activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/kali/.gradle/caches/8.13/transforms/6e24dacd79359742e280b5a87de60f33/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/kali/.gradle/caches/8.13/transforms/6e24dacd79359742e280b5a87de60f33/transformed/jetified-activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/kali/.gradle/caches/8.13/transforms/77b995c059b0a4a18e82e47c2d8fd0da/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] /home/kali/.gradle/caches/8.13/transforms/77b995c059b0a4a18e82e47c2d8fd0da/transformed/jetified-emoji2-views-helper-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/kali/.gradle/caches/8.13/transforms/7433449ffa9beacd64bd0e4cbc92b6b6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/kali/.gradle/caches/8.13/transforms/7433449ffa9beacd64bd0e4cbc92b6b6/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/kali/.gradle/caches/8.13/transforms/2196778c6a01d44cafe80f11d3b34933/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/kali/.gradle/caches/8.13/transforms/2196778c6a01d44cafe80f11d3b34933/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/kali/.gradle/caches/8.13/transforms/203f8e81769c2433d2601809984042a0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/kali/.gradle/caches/8.13/transforms/203f8e81769c2433d2601809984042a0/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/kali/.gradle/caches/8.13/transforms/b1a4f99c1c424e5ec9884f3e440572fe/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/kali/.gradle/caches/8.13/transforms/b1a4f99c1c424e5ec9884f3e440572fe/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/kali/.gradle/caches/8.13/transforms/8e8c749cecf8f66abc02dc214c133db1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/kali/.gradle/caches/8.13/transforms/8e8c749cecf8f66abc02dc214c133db1/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/83fe2f19b49eccf18ad6e1f28630ff23/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/83fe2f19b49eccf18ad6e1f28630ff23/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kali/.gradle/caches/8.13/transforms/908335f57629b6c8e6f437f979fd2578/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/kali/.gradle/caches/8.13/transforms/908335f57629b6c8e6f437f979fd2578/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/kali/.gradle/caches/8.13/transforms/97015edba74429c43f8be6cc307dd3d9/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/kali/.gradle/caches/8.13/transforms/97015edba74429c43f8be6cc307dd3d9/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/f637e4c8c5b80d5e98dc7fc9bd4da2f1/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/f637e4c8c5b80d5e98dc7fc9bd4da2f1/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kali/.gradle/caches/8.13/transforms/bf9495c0fd0979d87763cb0d489fb0e0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] /home/kali/.gradle/caches/8.13/transforms/bf9495c0fd0979d87763cb0d489fb0e0/transformed/slidingpanelayout-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/1a4ea4360423ed48866aab91cf37bcd9/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/kali/.gradle/caches/8.13/transforms/1a4ea4360423ed48866aab91cf37bcd9/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/kali/.gradle/caches/8.13/transforms/62778fb0fd48805760341ad431bbc2d1/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] /home/kali/.gradle/caches/8.13/transforms/62778fb0fd48805760341ad431bbc2d1/transformed/transition-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5e474ee4ea08ed6bedf64d8d5af59fdc/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/kali/.gradle/caches/8.13/transforms/5e474ee4ea08ed6bedf64d8d5af59fdc/transformed/jetified-savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/kali/.gradle/caches/8.13/transforms/318bcd233d645a2c21f180bd0aceb40d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/kali/.gradle/caches/8.13/transforms/318bcd233d645a2c21f180bd0aceb40d/transformed/jetified-savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/kali/.gradle/caches/8.13/transforms/6efdb42d1131eaa2df20adc4e5129c10/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.7.0] /home/kali/.gradle/caches/8.13/transforms/6efdb42d1131eaa2df20adc4e5129c10/transformed/lifecycle-livedata-core-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/d6957c1096b90fa7401d02591c70924c/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/d6957c1096b90fa7401d02591c70924c/transformed/jetified-lifecycle-livedata-core-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/kali/.gradle/caches/8.13/transforms/b884c9374f540b82f9f8bbe156f5b2ed/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.7.0] /home/kali/.gradle/caches/8.13/transforms/b884c9374f540b82f9f8bbe156f5b2ed/transformed/lifecycle-livedata-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a63007f3e22b30692c3459853389032b/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a63007f3e22b30692c3459853389032b/transformed/jetified-lifecycle-runtime-ktx-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/kali/.gradle/caches/8.13/transforms/c5487043f206bc50bfc4bd4bb46ac85f/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.7.0] /home/kali/.gradle/caches/8.13/transforms/c5487043f206bc50bfc4bd4bb46ac85f/transformed/lifecycle-runtime-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/kali/.gradle/caches/8.13/transforms/25c760993a03d47d0e87845b13350c37/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.7.0] /home/kali/.gradle/caches/8.13/transforms/25c760993a03d47d0e87845b13350c37/transformed/lifecycle-viewmodel-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/df1d7d88fb801ca5b8a6d11cf941e179/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/df1d7d88fb801ca5b8a6d11cf941e179/transformed/jetified-lifecycle-viewmodel-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a8a9927cad20a057f0d27410021ce95f/transformed/jetified-lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a8a9927cad20a057f0d27410021ce95f/transformed/jetified-lifecycle-livedata-ktx-2.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a37d2a8a30eddbbb846d20d1bf38ca21/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] /home/kali/.gradle/caches/8.13/transforms/a37d2a8a30eddbbb846d20d1bf38ca21/transformed/jetified-lifecycle-viewmodel-savedstate-2.7.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /home/kali/.gradle/caches/8.13/transforms/4e2b1dcd6d2150355d788d73a5a41393/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /home/kali/.gradle/caches/8.13/transforms/4e2b1dcd6d2150355d788d73a5a41393/transformed/jetified-core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/kali/.gradle/caches/8.13/transforms/6f4942073681c0543fcdc07282652c11/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/kali/.gradle/caches/8.13/transforms/6f4942073681c0543fcdc07282652c11/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kali/.gradle/caches/8.13/transforms/13d51e5457c376005d1b24242e0c0d0f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/kali/.gradle/caches/8.13/transforms/13d51e5457c376005d1b24242e0c0d0f/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6a74a29858f055468c2a6e53c76879eb/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6a74a29858f055468c2a6e53c76879eb/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6b429a70900155cec0675db5403a0841/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/kali/.gradle/caches/8.13/transforms/6b429a70900155cec0675db5403a0841/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/kali/.gradle/caches/8.13/transforms/f4b953af02ab1bcd1bf2cfdd8ef3c553/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/kali/.gradle/caches/8.13/transforms/f4b953af02ab1bcd1bf2cfdd8ef3c553/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/kali/.gradle/caches/8.13/transforms/b6a259e820fc9665bcf5aadec2cd9f49/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/kali/.gradle/caches/8.13/transforms/b6a259e820fc9665bcf5aadec2cd9f49/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/kali/.gradle/caches/8.13/transforms/a167e0f61055fa7698d295b479cfc203/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/kali/.gradle/caches/8.13/transforms/a167e0f61055fa7698d295b479cfc203/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kali/.gradle/caches/8.13/transforms/442f320bb15b99c9b891157eddcf3f32/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/kali/.gradle/caches/8.13/transforms/442f320bb15b99c9b891157eddcf3f32/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/64e8679a6227b09916952fe4ce828db0/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/kali/.gradle/caches/8.13/transforms/64e8679a6227b09916952fe4ce828db0/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/kali/.gradle/caches/8.13/transforms/5720082a2062fe3271c9a2f67580d8c9/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/kali/.gradle/caches/8.13/transforms/5720082a2062fe3271c9a2f67580d8c9/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8.13/transforms/af56cc8e5d54fb86c5a217e03588aaeb/transformed/jetified-startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] /home/kali/.gradle/caches/8.13/transforms/c3bb6eee0a781fc1584c52f233255ce0/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] /home/kali/.gradle/caches/8.13/transforms/1470f8ddace15e8042b59a1958f697f5/transformed/jetified-window-1.0.0/AndroidManifest.xml:29:13-51
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.supermarket.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.supermarket.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/kali/.gradle/caches/8.13/transforms/2eced8c2054aafd5064647cac6e96ad4/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.7.0] /home/kali/.gradle/caches/8.13/transforms/44cee41a50f41f865439194d82d85a46/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] /home/kali/.gradle/caches/8.13/transforms/f39d724bb5eddffae6b177504aa9b09d/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92

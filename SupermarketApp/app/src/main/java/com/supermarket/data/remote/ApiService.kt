@@ -43,3 +43,15 @@ data class RestockRequest(
     val productId: Int,
     val quantity: Int
 )
+
+data class SaleRequest(
+    val branchId: Int,
+    val items: List<SaleItem>
+)
+
+data class MpesaRequest(
+    val phoneNumber: String,
+    val amount: Double,
+    val accountReference: String,
+    val transactionDesc: String
+)

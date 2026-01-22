@@ -27,4 +27,8 @@ class LoginViewModel : ViewModel() {
             _isLoading.value = false
         }
     }
+    
+    fun setLoginResult(result: Result<User>) {
+        _loginResult.value = result
+    }
 }

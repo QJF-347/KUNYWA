@@ -19,6 +19,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("../supermarket-release-key.keystore")
+            storePassword = "supermarket123"
+            keyAlias = "supermarket"
+            keyPassword = "supermarket123"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -26,6 +35,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {

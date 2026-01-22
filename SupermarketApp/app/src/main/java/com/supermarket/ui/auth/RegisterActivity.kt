@@ -8,9 +8,11 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.supermarket.R
 import com.supermarket.data.models.User
 import com.supermarket.ui.auth.LoginViewModel
+import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
     
@@ -99,10 +101,10 @@ class RegisterActivity : AppCompatActivity() {
             }
             
             // Register user (using login viewmodel for simplicity)
-            viewModelScope.launch {
+            viewModel.viewModelScope.launch {
                 val repository = com.supermarket.data.repository.SupermarketRepository()
                 val result = repository.register(username, email, phone, password)
-                viewModel.loginResult.postValue(result)
+                viewModel.setLoginResult(result)
             }
         }
     }

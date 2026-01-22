@@ -2,8 +2,9 @@ package com.supermarket.data.repository
 
 import com.supermarket.data.models.*
 import com.supermarket.data.remote.ApiClient
-import com.supermarket.data.remote.RestockRequest
 import com.supermarket.data.remote.SaleRequest
+import com.supermarket.data.remote.RestockRequest
+import com.supermarket.data.remote.MpesaRequest
 
 class SupermarketRepository {
     
@@ -102,7 +103,7 @@ class SupermarketRepository {
     
     suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String): Result<MpesaResponse> {
         return try {
-            val response = apiService.initiateStkPush(com.supermarket.data.models.MpesaRequest(phoneNumber, amount, accountReference, transactionDesc))
+            val response = apiService.initiateStkPush(MpesaRequest(phoneNumber, amount, accountReference, transactionDesc))
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else {

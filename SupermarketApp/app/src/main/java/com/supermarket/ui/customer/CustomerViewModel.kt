@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.supermarket.data.models.*
 import com.supermarket.data.repository.SupermarketRepository
+import kotlinx.coroutines.launch
 
 class CustomerViewModel : ViewModel() {
     
@@ -51,11 +52,12 @@ class CustomerViewModel : ViewModel() {
     }
     
     fun addToCart(product: Product, branchId: Int) {
-        val currentCart = _cart.value ?: mutableListOf()
+        val currentCart = _cart.value?.toMutableList() ?: mutableListOf()
         val existingItem = currentCart.find { it.product.id == product.id && it.branchId == branchId }
         
         if (existingItem != null) {
-            existingItem.quantity++
+            val updatedItem = existingItem.copy(quantity = existingItem.quantity + 1)
+            currentCart[currentCart.indexOf(existingItem)] = updatedItem
         } else {
             currentCart.add(CartItem(product, 1, branchId))
         }
@@ -64,12 +66,13 @@ class CustomerViewModel : ViewModel() {
     }
     
     fun removeFromCart(product: Product, branchId: Int) {
-        val currentCart = _cart.value ?: mutableListOf()
+        val currentCart = _cart.value?.toMutableList() ?: mutableListOf()
         val item = currentCart.find { it.product.id == product.id && it.branchId == branchId }
         
         if (item != null) {
             if (item.quantity > 1) {
-                item.quantity--
+                val updatedItem = item.copy(quantity = item.quantity - 1)
+                currentCart[currentCart.indexOf(item)] = updatedItem
             } else {
                 currentCart.remove(item)
             }
