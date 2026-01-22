@@ -1,0 +1,21 @@
+[build]
+builder = "GRADLE"
+
+[deploy]
+healthcheckPath = "/customer/branches"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "supermarket-api"
+
+[services.variables]
+PORT = "8080"
+DATABASE_URL = "${{Postgres.DATABASE_URL}}"
+DATABASE_USER = "${{Postgres.USERNAME}}"
+DATABASE_PASSWORD = "${{Postgres.PASSWORD}}"
+MPESA_CONSUMER_KEY = "your_consumer_key_here"
+MPESA_CONSUMER_SECRET = "your_consumer_secret_here"
+MPESA_PASSKEY = "your_passkey_here"
+SIMULATE_MPESA = "true"

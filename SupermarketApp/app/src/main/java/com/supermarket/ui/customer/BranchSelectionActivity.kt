@@ -1,0 +1,105 @@
+package com.supermarket.ui.customer
+
+import android.content.Intent
+import android.os.Bundle
+import android.widget.ProgressBar
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.supermarket.R
+import com.supermarket.data.models.Branch
+
+class BranchSelectionActivity : AppCompatActivity() {
+    
+    private lateinit var viewModel: CustomerViewModel
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var progressBar: ProgressBar
+    private lateinit var branchAdapter: BranchAdapter
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_branch_selection)
+        
+        viewModel = ViewModelProvider(this)[CustomerViewModel::class.java]
+        
+        initViews()
+        setupRecyclerView()
+        setupObservers()
+        
+        viewModel.loadBranches()
+    }
+    
+    private fun initViews() {
+        recyclerView = findViewById(R.id.recyclerView)
+        progressBar = findViewById(R.id.progressBar)
+    }
+    
+    private fun setupRecyclerView() {
+        branchAdapter = BranchAdapter { branch ->
+            val intent = Intent(this, ProductListActivity::class.java)
+            intent.putExtra("branch_id", branch.id)
+            intent.putExtra("branch_name", branch.name)
+            startActivity(intent)
+        }
+        
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = branchAdapter
+    }
+    
+    private fun setupObservers() {
+        viewModel.branches.observe(this) { result ->
+            result.fold(
+                onSuccess = { branches ->
+                    branchAdapter.submitList(branches)
+                },
+                onFailure = { error ->
+                    Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+                }
+            )
+        }
+        
+        viewModel.isLoading.observe(this) { isLoading ->
+            progressBar.visibility = if (isLoading) android.view.View.VISIBLE else android.view.View.GONE
+        }
+    }
+}
+
+class BranchAdapter(
+    private val onBranchClick: (Branch) -> Unit
+) : androidx.recyclerview.widget.ListAdapter<Branch, BranchAdapter.BranchViewHolder>(BranchDiffCallback()) {
+    
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): BranchViewHolder {
+        val view = android.view.LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_branch, parent, false)
+        return BranchViewHolder(view)
+    }
+    
+    override fun onBindViewHolder(holder: BranchViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
+    
+    class BranchViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+        private val tvBranchName: TextView = itemView.findViewById(R.id.tvBranchName)
+        private val tvBranchLocation: TextView = itemView.findViewById(R.id.tvBranchLocation)
+        
+        fun bind(branch: Branch) {
+            tvBranchName.text = branch.name
+            tvBranchLocation.text = branch.location
+            itemView.setOnClickListener {
+                // Handle click through callback
+            }
+        }
+    }
+}
+
+class BranchDiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<Branch>() {
+    override fun areItemsTheSame(oldItem: Branch, newItem: Branch): Boolean {
+        return oldItem.id == newItem.id
+    }
+    
+    override fun areContentsTheSame(oldItem: Branch, newItem: Branch): Boolean {
+        return oldItem == newItem
+    }
+}
