@@ -33,14 +33,18 @@ public final class ActivityProductListBinding implements ViewBinding {
   @NonNull
   public final TextView tvBranchName;
 
+  @NonNull
+  public final TextView tvCartBadge;
+
   private ActivityProductListBinding(@NonNull LinearLayout rootView, @NonNull TextView btnViewCart,
       @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerView,
-      @NonNull TextView tvBranchName) {
+      @NonNull TextView tvBranchName, @NonNull TextView tvCartBadge) {
     this.rootView = rootView;
     this.btnViewCart = btnViewCart;
     this.progressBar = progressBar;
     this.recyclerView = recyclerView;
     this.tvBranchName = tvBranchName;
+    this.tvCartBadge = tvCartBadge;
   }
 
   @Override
@@ -94,8 +98,14 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvCartBadge;
+      TextView tvCartBadge = ViewBindings.findChildViewById(rootView, id);
+      if (tvCartBadge == null) {
+        break missingId;
+      }
+
       return new ActivityProductListBinding((LinearLayout) rootView, btnViewCart, progressBar,
-          recyclerView, tvBranchName);
+          recyclerView, tvBranchName, tvCartBadge);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

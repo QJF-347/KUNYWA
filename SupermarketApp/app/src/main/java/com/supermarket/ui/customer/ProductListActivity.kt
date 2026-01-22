@@ -3,6 +3,7 @@ package com.supermarket.ui.customer
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ class ProductListActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private lateinit var tvBranchName: TextView
     private lateinit var btnViewCart: TextView
+    private lateinit var tvCartBadge: TextView
     private lateinit var productAdapter: ProductAdapter
     
     private var branchId: Int = 0
@@ -50,6 +52,7 @@ class ProductListActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         tvBranchName = findViewById(R.id.tvBranchName)
         btnViewCart = findViewById(R.id.btnViewCart)
+        tvCartBadge = findViewById(R.id.tvCartBadge)
         
         tvBranchName.text = branchName
     }
@@ -80,6 +83,21 @@ class ProductListActivity : AppCompatActivity() {
         viewModel.isLoading.observe(this) { isLoading ->
             progressBar.visibility = if (isLoading) android.view.View.VISIBLE else android.view.View.GONE
         }
+        
+        // Observe cart changes to update badge
+        viewModel.cart.observe(this) { cartItems ->
+            val itemCount = cartItems?.sumOf { it.quantity } ?: 0
+            updateCartBadge(itemCount)
+        }
+    }
+    
+    private fun updateCartBadge(count: Int) {
+        if (count > 0) {
+            tvCartBadge.text = count.toString()
+            tvCartBadge.visibility = android.view.View.VISIBLE
+        } else {
+            tvCartBadge.visibility = android.view.View.GONE
+        }
     }
     
     private fun setupClickListeners() {
@@ -109,11 +127,38 @@ class ProductAdapter(
     class ProductViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         private val tvProductName: TextView = itemView.findViewById(R.id.tvProductName)
         private val tvProductPrice: TextView = itemView.findViewById(R.id.tvProductPrice)
+        private val tvStockQuantity: TextView = itemView.findViewById(R.id.tvStockQuantity)
+        private val ivProduct: ImageView = itemView.findViewById(R.id.ivProduct)
         private val btnAddToCart: TextView = itemView.findViewById(R.id.btnAddToCart)
         
         fun bind(stock: Stock, onAddToCart: (Stock) -> Unit) {
             tvProductName.text = stock.productName
             tvProductPrice.text = "KES ${stock.price}"
+            tvStockQuantity.text = "${stock.quantity} remaining"
+            
+            // Set product image based on product name
+            when (stock.productName.lowercase()) {
+                "coke" -> {
+                    ivProduct.setImageResource(android.R.drawable.ic_menu_camera) // Red theme
+                    tvProductName.setTextColor(android.graphics.Color.parseColor("#FF0000")) // Red
+                    btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FF0000"))
+                }
+                "fanta" -> {
+                    ivProduct.setImageResource(android.R.drawable.ic_menu_gallery) // Orange theme
+                    tvProductName.setTextColor(android.graphics.Color.parseColor("#FFA500")) // Orange
+                    btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FFA500"))
+                }
+                "sprite" -> {
+                    ivProduct.setImageResource(android.R.drawable.ic_menu_info_details) // Green theme
+                    tvProductName.setTextColor(android.graphics.Color.parseColor("#008000")) // Green
+                    btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#008000"))
+                }
+                else -> {
+                    ivProduct.setImageResource(android.R.drawable.ic_menu_gallery)
+                    tvProductName.setTextColor(android.graphics.Color.parseColor("#000000")) // Black
+                    btnAddToCart.setBackgroundColor(itemView.context.getColor(android.R.color.holo_blue_dark))
+                }
+            }
             
             btnAddToCart.setOnClickListener {
                 onAddToCart(stock)

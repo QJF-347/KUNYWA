@@ -3055,6 +3055,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable cart_badge_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3403,6 +3404,7 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
+id ivProduct
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3665,12 +3667,14 @@ id transition_transform
 id triangle
 id tvBranchLocation
 id tvBranchName
+id tvCartBadge
 id tvGrandTotal
 id tvItemTotal
 id tvProductName
 id tvProductPrice
 id tvQuantity
 id tvRegister
+id tvStockQuantity
 id tvTotalAmount
 id tvTotalIncome
 id tvTotalQuantity

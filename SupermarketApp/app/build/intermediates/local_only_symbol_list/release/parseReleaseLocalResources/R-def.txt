@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+drawable cart_badge_background
 id btnAddToCart
 id btnCheckout
 id btnDecrease
@@ -18,18 +19,21 @@ id etPassword
 id etPhone
 id etQuantity
 id etUsername
+id ivProduct
 id progressBar
 id recyclerView
 id spinnerBranch
 id spinnerProduct
 id tvBranchLocation
 id tvBranchName
+id tvCartBadge
 id tvGrandTotal
 id tvItemTotal
 id tvProductName
 id tvProductPrice
 id tvQuantity
 id tvRegister
+id tvStockQuantity
 id tvTotalAmount
 id tvTotalIncome
 id tvTotalQuantity
