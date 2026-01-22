@@ -20,14 +20,18 @@ public final class ItemBranchBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
+  public final TextView tvBranchAbbreviation;
+
+  @NonNull
   public final TextView tvBranchLocation;
 
   @NonNull
   public final TextView tvBranchName;
 
-  private ItemBranchBinding(@NonNull CardView rootView, @NonNull TextView tvBranchLocation,
-      @NonNull TextView tvBranchName) {
+  private ItemBranchBinding(@NonNull CardView rootView, @NonNull TextView tvBranchAbbreviation,
+      @NonNull TextView tvBranchLocation, @NonNull TextView tvBranchName) {
     this.rootView = rootView;
+    this.tvBranchAbbreviation = tvBranchAbbreviation;
     this.tvBranchLocation = tvBranchLocation;
     this.tvBranchName = tvBranchName;
   }
@@ -59,6 +63,12 @@ public final class ItemBranchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.tvBranchAbbreviation;
+      TextView tvBranchAbbreviation = ViewBindings.findChildViewById(rootView, id);
+      if (tvBranchAbbreviation == null) {
+        break missingId;
+      }
+
       id = R.id.tvBranchLocation;
       TextView tvBranchLocation = ViewBindings.findChildViewById(rootView, id);
       if (tvBranchLocation == null) {
@@ -71,7 +81,8 @@ public final class ItemBranchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemBranchBinding((CardView) rootView, tvBranchLocation, tvBranchName);
+      return new ItemBranchBinding((CardView) rootView, tvBranchAbbreviation, tvBranchLocation,
+          tvBranchName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

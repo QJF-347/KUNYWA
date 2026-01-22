@@ -8,6 +8,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.supermarket.R
@@ -75,10 +77,14 @@ class CartActivity : AppCompatActivity() {
     }
     
     private fun setupObservers() {
-        // Observe CartManager instead of ViewModel
-        CartManager.cart.collect { cart ->
-            cartAdapter.submitList(cart)
-            tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
+        // Observe CartManager using repeatOnLifecycle
+        lifecycleScope.launch {
+            repeatOnLifecycle(this) {
+                CartManager.cart.collect { cart ->
+                    cartAdapter.submitList(cart)
+                    tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
+                }
+            }
         }
         
         viewModel.saleResult.observe(this) { result ->

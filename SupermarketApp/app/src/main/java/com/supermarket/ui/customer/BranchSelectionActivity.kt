@@ -112,10 +112,46 @@ class BranchAdapter(
     class BranchViewHolder(itemView: android.view.View, private val onBranchClick: (Branch) -> Unit) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         private val tvBranchName: TextView = itemView.findViewById(R.id.tvBranchName)
         private val tvBranchLocation: TextView = itemView.findViewById(R.id.tvBranchLocation)
+        private val tvBranchAbbreviation: TextView = itemView.findViewById(R.id.tvBranchAbbreviation)
         
         fun bind(branch: Branch) {
             tvBranchName.text = branch.name
             tvBranchLocation.text = branch.location
+            
+            // Set branch abbreviation and colors
+            when (branch.name) {
+                "Nairobi" -> {
+                    tvBranchAbbreviation.text = "HQ"
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#2196F3")) // Blue
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#2196F3"))
+                }
+                "Kisumu" -> {
+                    tvBranchAbbreviation.text = "KS"
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#FF9800")) // Orange
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FF9800"))
+                }
+                "Mombasa" -> {
+                    tvBranchAbbreviation.text = "MB"
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#4CAF50")) // Green
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#4CAF50"))
+                }
+                "Nakuru" -> {
+                    tvBranchAbbreviation.text = "NK"
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#9C27B0")) // Purple
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#9C27B0"))
+                }
+                "Eldoret" -> {
+                    tvBranchAbbreviation.text = "ED"
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#F44336")) // Red
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#F44336"))
+                }
+                else -> {
+                    tvBranchAbbreviation.text = ""
+                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#757575")) // Gray
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#757575"))
+                }
+            }
+            
             itemView.setOnClickListener {
                 onBranchClick(branch)
             }

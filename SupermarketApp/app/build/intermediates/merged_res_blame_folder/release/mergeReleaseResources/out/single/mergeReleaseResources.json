@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.supermarket.app-release-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.supermarket.app-main-42:/drawable/ic_launcher_background.xml"
+    },
+    {
         "merged": "com.supermarket.app-release-41:/layout_activity_branch_selection.xml.flat",
         "source": "com.supermarket.app-main-42:/layout/activity_branch_selection.xml"
     },
@@ -46,6 +50,10 @@
     {
         "merged": "com.supermarket.app-release-41:/layout_activity_admin_dashboard.xml.flat",
         "source": "com.supermarket.app-main-42:/layout/activity_admin_dashboard.xml"
+    },
+    {
+        "merged": "com.supermarket.app-release-41:/drawable_branch_badge_background.xml.flat",
+        "source": "com.supermarket.app-main-42:/drawable/branch_badge_background.xml"
     },
     {
         "merged": "com.supermarket.app-release-41:/layout_activity_main.xml.flat",
@@ -110,6 +118,10 @@
     {
         "merged": "com.supermarket.app-release-41:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "com.supermarket.app-main-42:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-release-41:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.supermarket.app-main-42:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher.png.flat",

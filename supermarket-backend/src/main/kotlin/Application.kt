@@ -51,7 +51,9 @@ val users = mutableListOf<User>()
 val branches = listOf(
     Branch(1, "Nairobi", "Nairobi"),
     Branch(2, "Kisumu", "Kisumu"),
-    Branch(3, "Mombasa", "Mombasa")
+    Branch(3, "Mombasa", "Mombasa"),
+    Branch(4, "Nakuru", "Nakuru"),
+    Branch(5, "Eldoret", "Eldoret")
 )
 
 val stocks = mutableMapOf<Int, List<Stock>>()
@@ -74,6 +76,16 @@ fun initializeStocks() {
         Stock(8, 2, "Fanta", 40, 120.0),
         Stock(9, 3, "Sprite", 30, 120.0)
     )
+    stocks[4] = listOf(
+        Stock(10, 1, "Coke", 65, 120.0),
+        Stock(11, 2, "Fanta", 48, 120.0),
+        Stock(12, 3, "Sprite", 17, 120.0)
+    )
+    stocks[5] = listOf(
+        Stock(13, 1, "Coke", 55, 120.0),
+        Stock(14, 2, "Fanta", 34, 120.0),
+        Stock(15, 3, "Sprite", 32, 120.0)
+    )
 }
 
 fun main() {
@@ -90,7 +102,7 @@ fun main() {
         
         routing {
             get("/") {
-                call.respond(mapOf("status" to "Supermarket Backend is running"))
+                call.respond(mapOf("status" to "Supermarket Backend is running", "branches_count" to branches.size))
             }
             
             get("/health") {

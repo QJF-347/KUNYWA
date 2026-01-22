@@ -99,9 +99,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/kali/.gradle/caches/8
 	android:extractNativeLibs
 		INJECTED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml
 	android:roundIcon
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:15:9-54
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:15:9-61
 	android:icon
-		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:13:9-43
+		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:13:9-56
 	android:networkSecurityConfig
 		ADDED from /home/kali/Desktop/KUNYWA/SupermarketApp/app/src/main/AndroidManifest.xml:19:9-69
 	android:appComponentFactory

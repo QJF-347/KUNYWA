@@ -1,8 +1,11 @@
 R_DEF: Internal format may change without notice
 local
+drawable branch_badge_background
 drawable cart_badge_background
 drawable coke
 drawable fanta
+drawable ic_launcher_background
+drawable ic_launcher_foreground
 drawable logo
 drawable sprite
 id btnAddToCart
@@ -29,6 +32,7 @@ id progressBar
 id recyclerView
 id spinnerBranch
 id spinnerProduct
+id tvBranchAbbreviation
 id tvBranchLocation
 id tvBranchName
 id tvCartBadge
