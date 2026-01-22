@@ -46,7 +46,9 @@ id tvRegister
 id tvStockQuantity
 id tvTotalAmount
 id tvTotalIncome
+id tvTotalOrders
 id tvTotalQuantity
+id tvTotalSales
 id tvWelcome
 layout activity_admin_dashboard
 layout activity_branch_selection

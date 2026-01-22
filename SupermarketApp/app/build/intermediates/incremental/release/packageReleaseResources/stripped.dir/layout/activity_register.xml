@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/login_bg_picture">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,9 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Register"
+            android:text="KUNYWA Register"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="32dp" />
 
         <EditText
@@ -25,6 +27,8 @@
             android:layout_height="wrap_content"
             android:hint="Username"
             android:inputType="text"
+            android:background="@android:color/white"
+            android:padding="12dp"
             android:layout_marginBottom="16dp" />
 
         <EditText
@@ -33,6 +37,8 @@
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="textEmailAddress"
+            android:background="@android:color/white"
+            android:padding="12dp"
             android:layout_marginBottom="16dp" />
 
         <EditText
@@ -41,6 +47,8 @@
             android:layout_height="wrap_content"
             android:hint="Phone Number"
             android:inputType="phone"
+            android:background="@android:color/white"
+            android:padding="12dp"
             android:layout_marginBottom="16dp" />
 
         <EditText
@@ -49,6 +57,8 @@
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
+            android:background="@android:color/white"
+            android:padding="12dp"
             android:layout_marginBottom="16dp" />
 
         <EditText
@@ -57,6 +67,8 @@
             android:layout_height="wrap_content"
             android:hint="Confirm Password"
             android:inputType="textPassword"
+            android:background="@android:color/white"
+            android:padding="12dp"
             android:layout_marginBottom="24dp" />
 
         <Button
@@ -64,6 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="16dp" />
 
         <ProgressBar

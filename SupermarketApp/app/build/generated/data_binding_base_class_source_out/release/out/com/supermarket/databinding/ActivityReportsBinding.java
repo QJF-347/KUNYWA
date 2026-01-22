@@ -34,14 +34,23 @@ public final class ActivityReportsBinding implements ViewBinding {
   @NonNull
   public final TextView tvGrandTotal;
 
+  @NonNull
+  public final TextView tvTotalOrders;
+
+  @NonNull
+  public final TextView tvTotalSales;
+
   private ActivityReportsBinding(@NonNull LinearLayout rootView, @NonNull Button btnRefresh,
       @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerView,
-      @NonNull TextView tvGrandTotal) {
+      @NonNull TextView tvGrandTotal, @NonNull TextView tvTotalOrders,
+      @NonNull TextView tvTotalSales) {
     this.rootView = rootView;
     this.btnRefresh = btnRefresh;
     this.progressBar = progressBar;
     this.recyclerView = recyclerView;
     this.tvGrandTotal = tvGrandTotal;
+    this.tvTotalOrders = tvTotalOrders;
+    this.tvTotalSales = tvTotalSales;
   }
 
   @Override
@@ -95,8 +104,20 @@ public final class ActivityReportsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvTotalOrders;
+      TextView tvTotalOrders = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalOrders == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTotalSales;
+      TextView tvTotalSales = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotalSales == null) {
+        break missingId;
+      }
+
       return new ActivityReportsBinding((LinearLayout) rootView, btnRefresh, progressBar,
-          recyclerView, tvGrandTotal);
+          recyclerView, tvGrandTotal, tvTotalOrders, tvTotalSales);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -17,6 +17,8 @@ class ReportsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var progressBar: ProgressBar
     private lateinit var tvGrandTotal: TextView
+    private lateinit var tvTotalSales: TextView
+    private lateinit var tvTotalOrders: TextView
     private lateinit var btnRefresh: Button
     
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,8 @@ class ReportsActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
         progressBar = findViewById(R.id.progressBar)
         tvGrandTotal = findViewById(R.id.tvGrandTotal)
+        tvTotalSales = findViewById(R.id.tvTotalSales)
+        tvTotalOrders = findViewById(R.id.tvTotalOrders)
         btnRefresh = findViewById(R.id.btnRefresh)
     }
     
@@ -49,11 +53,15 @@ class ReportsActivity : AppCompatActivity() {
         viewModel.reports.observe(this) { result ->
             result.fold(
                 onSuccess = { report ->
-                    // For now, just show the total sales and orders
-                    tvGrandTotal.text = "Total Sales: KES ${report.totalSales}, Orders: ${report.totalOrders}"
+                    // Update all summary TextViews
+                    tvGrandTotal.text = report.totalSales.toString()
+                    tvTotalSales.text = report.totalSales.toString()
+                    tvTotalOrders.text = report.totalOrders.toString()
                 },
                 onFailure = { error ->
-                    tvGrandTotal.text = "Error loading reports"
+                    tvGrandTotal.text = "Error"
+                    tvTotalSales.text = "Error"
+                    tvTotalOrders.text = "Error"
                 }
             )
         }

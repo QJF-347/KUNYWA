@@ -3687,7 +3687,9 @@ id tvRegister
 id tvStockQuantity
 id tvTotalAmount
 id tvTotalIncome
+id tvTotalOrders
 id tvTotalQuantity
+id tvTotalSales
 id tvWelcome
 id unchecked
 id uniform
