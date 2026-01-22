@@ -1,23 +1,36 @@
 package com.supermarket
 
-import com.supermarket.config.Database
-import com.supermarket.data.DatabaseInitializer
-import com.supermarket.routes.*
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
-import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.request.*
-import io.ktor.server.call.*
-import io.ktor.server.logging.*
-import org.slf4j.event.*
+import io.ktor.server.routing.*
 
 fun main() {
     embeddedServer(Netty, port = System.getenv("PORT")?.toInt() ?: 8080, host = "0.0.0.0") {
+        install(ContentNegotiation) {
+            json()
+        }
+        
+        install(CORS) {
+            anyHost()
+        }
+        
+        routing {
+            get("/") {
+                call.respond(mapOf("status" to "Supermarket Backend is running"))
+            }
+            
+            get("/health") {
+                call.respond(mapOf("status" to "healthy"))
+            }
+        }
+    }.start(wait = true)
+}
         configurePlugins()
         configureRouting()
     }.start(wait = true)

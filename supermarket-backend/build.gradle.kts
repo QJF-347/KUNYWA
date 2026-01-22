@@ -19,7 +19,6 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm:2.3.8")
     implementation("io.ktor:ktor-server-cors-jvm:2.3.8")
     implementation("io.ktor:ktor-server-status-pages-jvm:2.3.8")
-    implementation("io.ktor:ktor-server-logging-jvm:2.3.8")
     implementation("io.ktor:ktor-server-request-validation-jvm:2.3.8")
     
     // Database
@@ -31,6 +30,9 @@ dependencies {
     
     // JSON
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    
+    // Security
+    implementation("org.mindrot:jbcrypt:0.4")
     
     // Logging
     implementation("ch.qos.logback:logback-classic:1.4.14")
