@@ -65,6 +65,13 @@ class ProductListActivity : AppCompatActivity() {
             val product = Product(stock.productId, stock.productName, stock.price)
             viewModel.addToCart(product, branchId)
             Toast.makeText(this, "${stock.productName} added to cart", Toast.LENGTH_SHORT).show()
+            
+            // Debug: Check cart after adding
+            val currentCart = viewModel.cart.value
+            android.util.Log.d("ProductListActivity", "Cart after adding: ${currentCart?.size} items")
+            currentCart?.forEach { item ->
+                android.util.Log.d("ProductListActivity", "Item: ${item.product.name}, Quantity: ${item.quantity}")
+            }
         }
         
         recyclerView.layoutManager = LinearLayoutManager(this)

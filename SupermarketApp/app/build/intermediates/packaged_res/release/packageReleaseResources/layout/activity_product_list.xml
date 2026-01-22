@@ -79,7 +79,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_menu_more"
-        app:backgroundTint="@android:color/white"
+        app:backgroundTint="@android:color/holo_blue_dark"
         app:tint="@android:color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
