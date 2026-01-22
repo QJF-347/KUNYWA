@@ -9,11 +9,22 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.request.*
 import io.ktor.server.routing.*
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class User(val id: Int, val username: String, val role: String)
+
+@Serializable
 data class LoginRequest(val username: String, val password: String)
+
+@Serializable
 data class RegisterRequest(val username: String, val email: String, val phone: String, val password: String)
+
+@Serializable
 data class Branch(val id: Int, val name: String, val location: String)
+
+@Serializable
+data class DebugResponse(val users: List<User>, val branches: List<Branch>)
 
 val users = mutableListOf<User>()
 val branches = listOf(
@@ -42,10 +53,8 @@ fun main() {
             }
             
             get("/debug") {
-                call.respond(mapOf(
-                    "users" to users,
-                    "branches" to branches
-                ))
+                val debugResponse = DebugResponse(users, branches)
+                call.respond(debugResponse)
             }
             
             post("/auth/login") {
