@@ -91,6 +91,12 @@ fun initializeStocks() {
 fun main() {
     initializeStocks()
     
+    // Initialize admin user if no users exist
+    if (users.isEmpty()) {
+        val adminUser = User(1, "admin", "admin")
+        users.add(adminUser)
+    }
+    
     embeddedServer(Netty, port = System.getenv("PORT")?.toInt() ?: 8080, host = "0.0.0.0") {
         install(ContentNegotiation) {
             json()
