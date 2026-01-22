@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "KUNYWA"
 include(":app")
+include(":SupermarketApp")
  
