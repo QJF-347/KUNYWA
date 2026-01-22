@@ -22,4 +22,7 @@ object Constants {
     const val MOMBASA = "Mombasa"
     const val NAKURU = "Nakuru"
     const val ELDORET = "Eldoret"
+    
+    // All branches list for fallback
+    val ALL_BRANCHES = listOf(NAIROBI, KISUMU, MOMBASA, NAKURU, ELDORET)
 }

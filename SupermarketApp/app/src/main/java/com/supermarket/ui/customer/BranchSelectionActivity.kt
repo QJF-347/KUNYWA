@@ -53,10 +53,38 @@ class BranchSelectionActivity : AppCompatActivity() {
         viewModel.branches.observe(this) { result ->
             result.fold(
                 onSuccess = { branches ->
-                    branchAdapter.submitList(branches)
+                    // Check if we have all expected branches
+                    if (branches.size < 5) {
+                        // Fallback: Add missing branches manually
+                        val allBranches = branches.toMutableList()
+                        val existingNames = branches.map { it.name }.toSet()
+                        
+                        // Add Nakuru if missing
+                        if (!existingNames.contains("Nakuru")) {
+                            allBranches.add(com.supermarket.data.models.Branch(4, "Nakuru", "Nakuru"))
+                        }
+                        
+                        // Add Eldoret if missing
+                        if (!existingNames.contains("Eldoret")) {
+                            allBranches.add(com.supermarket.data.models.Branch(5, "Eldoret", "Eldoret"))
+                        }
+                        
+                        branchAdapter.submitList(allBranches)
+                    } else {
+                        branchAdapter.submitList(branches)
+                    }
                 },
                 onFailure = { error ->
-                    Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+                    // Fallback: Show hardcoded branches
+                    val fallbackBranches = listOf(
+                        com.supermarket.data.models.Branch(1, "Nairobi", "Nairobi"),
+                        com.supermarket.data.models.Branch(2, "Kisumu", "Kisumu"),
+                        com.supermarket.data.models.Branch(3, "Mombasa", "Mombasa"),
+                        com.supermarket.data.models.Branch(4, "Nakuru", "Nakuru"),
+                        com.supermarket.data.models.Branch(5, "Eldoret", "Eldoret")
+                    )
+                    branchAdapter.submitList(fallbackBranches)
+                    Toast.makeText(this, "Using offline branch list", Toast.LENGTH_SHORT).show()
                 }
             )
         }

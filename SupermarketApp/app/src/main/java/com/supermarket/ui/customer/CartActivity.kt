@@ -14,6 +14,7 @@ import com.supermarket.R
 import com.supermarket.data.models.CartItem
 import com.supermarket.data.models.MpesaResponse
 import com.supermarket.utils.MpesaManager
+import com.supermarket.utils.CartManager
 import com.supermarket.utils.PreferencesManager
 
 class CartActivity : AppCompatActivity() {
@@ -61,10 +62,11 @@ class CartActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         cartAdapter = CartAdapter(
             onIncreaseQuantity = { cartItem ->
-                viewModel.addToCart(cartItem.product, cartItem.branchId)
+                val updatedItem = cartItem.copy(quantity = cartItem.quantity + 1)
+                CartManager.addToCart(updatedItem)
             },
             onDecreaseQuantity = { cartItem ->
-                viewModel.removeFromCart(cartItem.product, cartItem.branchId)
+                CartManager.removeFromCart(cartItem)
             }
         )
         
@@ -73,16 +75,17 @@ class CartActivity : AppCompatActivity() {
     }
     
     private fun setupObservers() {
-        viewModel.cart.observe(this) { cart ->
-            cartAdapter.submitList(cart.toList())
-            tvTotalAmount.text = "Total: KES ${viewModel.getCartTotal()}"
+        // Observe CartManager instead of ViewModel
+        CartManager.cart.collect { cart ->
+            cartAdapter.submitList(cart)
+            tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
         }
         
         viewModel.saleResult.observe(this) { result ->
             result.fold(
                 onSuccess = { sale ->
                     Toast.makeText(this, "Sale completed successfully!", Toast.LENGTH_LONG).show()
-                    viewModel.clearCart()
+                    CartManager.clearCart()
                     finish()
                 },
                 onFailure = { error ->
