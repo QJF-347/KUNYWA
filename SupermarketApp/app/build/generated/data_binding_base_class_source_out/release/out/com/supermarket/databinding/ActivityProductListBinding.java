@@ -4,14 +4,15 @@ package com.supermarket.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.supermarket.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -19,10 +20,13 @@ import java.lang.String;
 
 public final class ActivityProductListBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
   public final TextView btnViewCart;
+
+  @NonNull
+  public final FloatingActionButton fabCart;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -36,11 +40,13 @@ public final class ActivityProductListBinding implements ViewBinding {
   @NonNull
   public final TextView tvCartBadge;
 
-  private ActivityProductListBinding(@NonNull LinearLayout rootView, @NonNull TextView btnViewCart,
+  private ActivityProductListBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull TextView btnViewCart, @NonNull FloatingActionButton fabCart,
       @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerView,
       @NonNull TextView tvBranchName, @NonNull TextView tvCartBadge) {
     this.rootView = rootView;
     this.btnViewCart = btnViewCart;
+    this.fabCart = fabCart;
     this.progressBar = progressBar;
     this.recyclerView = recyclerView;
     this.tvBranchName = tvBranchName;
@@ -49,7 +55,7 @@ public final class ActivityProductListBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -80,6 +86,12 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.fabCart;
+      FloatingActionButton fabCart = ViewBindings.findChildViewById(rootView, id);
+      if (fabCart == null) {
+        break missingId;
+      }
+
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
@@ -104,8 +116,8 @@ public final class ActivityProductListBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityProductListBinding((LinearLayout) rootView, btnViewCart, progressBar,
-          recyclerView, tvBranchName, tvCartBadge);
+      return new ActivityProductListBinding((CoordinatorLayout) rootView, btnViewCart, fabCart,
+          progressBar, recyclerView, tvBranchName, tvCartBadge);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

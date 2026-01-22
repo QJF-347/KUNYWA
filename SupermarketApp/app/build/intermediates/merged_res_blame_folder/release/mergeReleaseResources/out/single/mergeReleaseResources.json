@@ -76,12 +76,20 @@
         "source": "com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "com.supermarket.app-release-41:/drawable_logo.jpg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/logo.jpg"
+    },
+    {
         "merged": "com.supermarket.app-release-41:/xml_network_security_config.xml.flat",
         "source": "com.supermarket.app-main-42:/xml/network_security_config.xml"
     },
     {
         "merged": "com.supermarket.app-release-41:/layout_activity_restock.xml.flat",
         "source": "com.supermarket.app-main-42:/layout/activity_restock.xml"
+    },
+    {
+        "merged": "com.supermarket.app-release-41:/drawable_coke.jpg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/coke.jpg"
     },
     {
         "merged": "com.supermarket.app-release-41:/layout_activity_cart.xml.flat",
@@ -106,6 +114,14 @@
     {
         "merged": "com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.supermarket.app-main-42:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-release-41:/drawable_sprite.jpg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/sprite.jpg"
+    },
+    {
+        "merged": "com.supermarket.app-release-41:/drawable_fanta.jpg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/fanta.jpg"
     },
     {
         "merged": "com.supermarket.app-release-41:/layout_activity_reports.xml.flat",

@@ -1,6 +1,10 @@
 R_DEF: Internal format may change without notice
 local
 drawable cart_badge_background
+drawable coke
+drawable fanta
+drawable logo
+drawable sprite
 id btnAddToCart
 id btnCheckout
 id btnDecrease
@@ -19,6 +23,7 @@ id etPassword
 id etPhone
 id etQuantity
 id etUsername
+id fabCart
 id ivProduct
 id progressBar
 id recyclerView

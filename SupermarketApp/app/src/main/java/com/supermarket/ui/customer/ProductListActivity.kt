@@ -149,22 +149,22 @@ class ProductAdapter(
             // Set product image based on product name
             when (stock.productName.lowercase()) {
                 "coke" -> {
-                    ivProduct.setImageResource(R.drawable.pictures_coke)
+                    ivProduct.setImageResource(R.drawable.coke)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#FF0000")) // Red
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FF0000"))
                 }
                 "fanta" -> {
-                    ivProduct.setImageResource(R.drawable.pictures_fanta)
+                    ivProduct.setImageResource(R.drawable.fanta)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#FFA500")) // Orange
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FFA500"))
                 }
                 "sprite" -> {
-                    ivProduct.setImageResource(R.drawable.pictures_sprite)
+                    ivProduct.setImageResource(R.drawable.sprite)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#008000")) // Green
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#008000"))
                 }
                 else -> {
-                    ivProduct.setImageResource(R.drawable.pictures_logo)
+                    ivProduct.setImageResource(R.drawable.logo)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#000000")) // Black
                     btnAddToCart.setBackgroundColor(itemView.context.getColor(android.R.color.holo_blue_dark))
                 }
