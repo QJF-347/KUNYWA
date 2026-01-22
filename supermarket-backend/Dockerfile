@@ -16,7 +16,7 @@ FROM eclipse-temurin:17-jdk-focal
 WORKDIR /app
 
 # Copy built JAR from build stage
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/supermarket-backend-1.0-SNAPSHOT.jar app.jar
 
 # Expose default port
 EXPOSE 8080
