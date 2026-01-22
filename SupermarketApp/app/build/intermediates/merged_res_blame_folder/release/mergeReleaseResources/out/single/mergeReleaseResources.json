@@ -1,114 +1,110 @@
 [
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_branch_selection.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_branch_selection.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_branch_selection.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_branch_selection.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.supermarket.app-release-41:/layout_item_branch.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/item_branch.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/xml_backup_rules.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/xml/backup_rules.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_item_product.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/item_product.xml"
+        "merged": "com.supermarket.app-release-41:/xml_backup_rules.xml.flat",
+        "source": "com.supermarket.app-main-42:/xml/backup_rules.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_cart.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_cart.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_register.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_register.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_register.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_register.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.supermarket.app-release-41:/layout_activity_product_list.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_product_list.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.supermarket.app-release-41:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_item_cart.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/item_cart.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_item_report.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/item_report.xml"
+        "merged": "com.supermarket.app-release-41:/layout_item_cart.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/item_cart.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_restock.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_restock.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_reports.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_reports.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_admin_dashboard.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_admin_dashboard.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_product_list.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_product_list.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_main.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/xml/data_extraction_rules.xml"
+        "merged": "com.supermarket.app-release-41:/layout_item_product.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/item_product.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_item_branch.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/item_branch.xml"
+        "merged": "com.supermarket.app-release-41:/xml_data_extraction_rules.xml.flat",
+        "source": "com.supermarket.app-main-42:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/xml_network_security_config.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/xml/network_security_config.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_login.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_login.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_admin_dashboard.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_admin_dashboard.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.supermarket.app-release-41:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "com.supermarket.app-release-41:/xml_network_security_config.xml.flat",
         "source": "com.supermarket.app-main-42:/xml/network_security_config.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_customer_dashboard.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_customer_dashboard.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_restock.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_restock.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.supermarket.app-release-41:/layout_activity_cart.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_cart.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.supermarket.app-release-41:/layout_item_report.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/item_report.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.supermarket.app-release-41:/layout_activity_customer_dashboard.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_customer_dashboard.xml"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.supermarket.app-release-41:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_main.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_main.xml"
+        "merged": "com.supermarket.app-release-41:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-42:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-release-41:/layout_activity_login.xml.flat",
-        "source": "/home/kali/.gradle/daemon/8.13/com.supermarket.app-main-42:/layout/activity_login.xml"
+        "merged": "com.supermarket.app-release-41:/layout_activity_reports.xml.flat",
+        "source": "com.supermarket.app-main-42:/layout/activity_reports.xml"
     }
 ]
