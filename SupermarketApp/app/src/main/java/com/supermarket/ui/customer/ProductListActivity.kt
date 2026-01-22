@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.ImageView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class ProductListActivity : AppCompatActivity() {
     private lateinit var tvBranchName: TextView
     private lateinit var btnViewCart: TextView
     private lateinit var tvCartBadge: TextView
+    private lateinit var fabCart: FloatingActionButton
     private lateinit var productAdapter: ProductAdapter
     
     private var branchId: Int = 0
@@ -53,6 +55,7 @@ class ProductListActivity : AppCompatActivity() {
         tvBranchName = findViewById(R.id.tvBranchName)
         btnViewCart = findViewById(R.id.btnViewCart)
         tvCartBadge = findViewById(R.id.tvCartBadge)
+        fabCart = findViewById(R.id.fabCart)
         
         tvBranchName.text = branchName
     }
@@ -107,6 +110,13 @@ class ProductListActivity : AppCompatActivity() {
             intent.putExtra("branch_name", branchName)
             startActivity(intent)
         }
+        
+        fabCart.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            intent.putExtra("branch_id", branchId)
+            intent.putExtra("branch_name", branchName)
+            startActivity(intent)
+        }
     }
 }
 
@@ -139,22 +149,22 @@ class ProductAdapter(
             // Set product image based on product name
             when (stock.productName.lowercase()) {
                 "coke" -> {
-                    ivProduct.setImageResource(android.R.drawable.ic_menu_camera) // Red theme
+                    ivProduct.setImageResource(R.drawable.pictures_coke)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#FF0000")) // Red
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FF0000"))
                 }
                 "fanta" -> {
-                    ivProduct.setImageResource(android.R.drawable.ic_menu_gallery) // Orange theme
+                    ivProduct.setImageResource(R.drawable.pictures_fanta)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#FFA500")) // Orange
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#FFA500"))
                 }
                 "sprite" -> {
-                    ivProduct.setImageResource(android.R.drawable.ic_menu_info_details) // Green theme
+                    ivProduct.setImageResource(R.drawable.pictures_sprite)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#008000")) // Green
                     btnAddToCart.setBackgroundColor(android.graphics.Color.parseColor("#008000"))
                 }
                 else -> {
-                    ivProduct.setImageResource(android.R.drawable.ic_menu_gallery)
+                    ivProduct.setImageResource(R.drawable.pictures_logo)
                     tvProductName.setTextColor(android.graphics.Color.parseColor("#000000")) // Black
                     btnAddToCart.setBackgroundColor(itemView.context.getColor(android.R.color.holo_blue_dark))
                 }
