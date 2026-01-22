@@ -44,9 +44,9 @@ fun main() {
             post("/auth/login") {
                 try {
                     val request = call.receive<LoginRequest>()
-                    val user = users.find { it.username == request.username && it.password == request.password }
-                    if (user != null) {
-                        call.respond(user)
+                    val foundUser = users.firstOrNull { it.username == request.username }
+                    if (foundUser != null) {
+                        call.respond(foundUser)
                     } else {
                         call.respond(mapOf("error" to "Invalid credentials"))
                     }

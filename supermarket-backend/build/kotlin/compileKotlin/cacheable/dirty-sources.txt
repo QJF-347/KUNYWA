@@ -1,1 +1,0 @@
-/home/kali/Desktop/KUNYWA/supermarket-backend/src/main/kotlin/Application.kt
