@@ -35,5 +35,16 @@ fun Route.mpesaRoutes() {
                 call.respond(HttpStatusCode.InternalServerError, mapOf("error" to e.message))
             }
         }
+        
+        // MPesa callback endpoint for Daraja notifications
+        post("/callback") {
+            try {
+                val callbackData = call.receive<Map<String, Any>>()
+                val response = mpesaService.handleCallback(callbackData)
+                call.respond(HttpStatusCode.OK, response)
+            } catch (e: Exception) {
+                call.respond(HttpStatusCode.BadRequest, mapOf("error" to e.message))
+            }
+        }
     }
 }

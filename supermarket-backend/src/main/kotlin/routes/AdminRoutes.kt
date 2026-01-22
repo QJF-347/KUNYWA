@@ -1,5 +1,6 @@
 package com.supermarket.routes
 
+import com.supermarket.config.adminOnly
 import com.supermarket.models.*
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -14,42 +15,45 @@ fun Route.adminRoutes() {
     val salesService = SalesService()
     
     route("/admin") {
-        post("/restock") {
-            try {
-                val request = call.receive<RestockRequest>()
-                
-                Database.transaction {
-                    val existingStock = Stocks.select { 
-                        (Stocks.branchId eq request.branchId) and (Stocks.productId eq request.productId) 
-                    }.singleOrNull()
+        // Protect all admin routes with authentication
+        adminOnly {
+            post("/restock") {
+                try {
+                    val request = call.receive<RestockRequest>()
                     
-                    if (existingStock != null) {
-                        Stocks.update({ 
+                    Database.transaction {
+                        val existingStock = Stocks.select { 
                             (Stocks.branchId eq request.branchId) and (Stocks.productId eq request.productId) 
-                        }) {
-                            it[quantity] = existingStock[Stocks.quantity] + request.quantity
-                        }
-                    } else {
-                        Stocks.insert {
-                            it[branchId] = request.branchId
-                            it[productId] = request.productId
-                            it[quantity] = request.quantity
+                        }.singleOrNull()
+                        
+                        if (existingStock != null) {
+                            Stocks.update({ 
+                                (Stocks.branchId eq request.branchId) and (Stocks.productId eq request.productId) 
+                            }) {
+                                it[quantity] = existingStock[Stocks.quantity] + request.quantity
+                            }
+                        } else {
+                            Stocks.insert {
+                                it[branchId] = request.branchId
+                                it[productId] = request.productId
+                                it[quantity] = request.quantity
+                            }
                         }
                     }
+                    
+                    call.respond(HttpStatusCode.OK, mapOf("message" to "Restock successful"))
+                } catch (e: Exception) {
+                    call.respond(HttpStatusCode.BadRequest, mapOf("error" to e.message))
                 }
-                
-                call.respond(HttpStatusCode.OK, mapOf("message" to "Restock successful"))
-            } catch (e: Exception) {
-                call.respond(HttpStatusCode.BadRequest, mapOf("error" to e.message))
             }
-        }
-        
-        get("/reports") {
-            try {
-                val report = salesService.getOverallReport()
-                call.respond(HttpStatusCode.OK, report)
-            } catch (e: Exception) {
-                call.respond(HttpStatusCode.InternalServerError, mapOf("error" to e.message))
+            
+            get("/reports") {
+                try {
+                    val report = salesService.getOverallReport()
+                    call.respond(HttpStatusCode.OK, report)
+                } catch (e: Exception) {
+                    call.respond(HttpStatusCode.InternalServerError, mapOf("error" to e.message))
+                }
             }
         }
     }

@@ -81,4 +81,42 @@ class MpesaService {
             }
         }
     }
+    
+    // Handle MPesa callback from Daraja API
+    fun handleCallback(callbackData: Map<String, Any>): Map<String, String> {
+        return try {
+            Database.transaction {
+                // Extract callback data (simplified for demo)
+                val stkCallback = callbackData["Body"] as? Map<String, Any>
+                val callbackMetadata = stkCallback?.get("stkCallback") as? Map<String, Any>
+                val merchantRequestId = callbackMetadata?.get("MerchantRequestID") as? String
+                val checkoutRequestId = callbackMetadata?.get("CheckoutRequestID") as? String
+                val resultCode = callbackMetadata?.get("ResultCode") as? Double
+                val resultDesc = callbackMetadata?.get("ResultDesc") as? String
+                
+                if (checkoutRequestId != null && merchantRequestId != null) {
+                    val status = if (resultCode == 0.0) "completed" else "failed"
+                    
+                    MpesaTransactions.update({ MpesaTransactions.checkoutRequestId eq checkoutRequestId }) {
+                        it[status] = status
+                    }
+                    
+                    mapOf(
+                        "status" to "success",
+                        "message" to "Callback processed successfully"
+                    )
+                } else {
+                    mapOf(
+                        "status" to "error",
+                        "message" to "Invalid callback data"
+                    )
+                }
+            }
+        } catch (e: Exception) {
+            mapOf(
+                "status" to "error", 
+                "message" to "Failed to process callback: ${e.message}"
+            )
+        }
+    }
 }

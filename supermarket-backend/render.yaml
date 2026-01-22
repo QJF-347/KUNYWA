@@ -29,6 +29,8 @@ services:
       value: your_passkey_here
     - key: SIMULATE_MPESA
       value: true
+    - key: MPESA_CALLBACK_URL
+      value: https://supermarket-api.onrender.com/mpesa/callback
 
 databases:
   - name: supermarket-db

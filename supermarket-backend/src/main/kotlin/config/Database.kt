@@ -8,9 +8,11 @@ object Database {
     
     init {
         val databaseUrl = System.getenv("DATABASE_URL") 
-            ?: "jdbc:postgresql://localhost:5432/supermarket"
-        val databaseUser = System.getenv("DATABASE_USER") ?: "postgres"
-        val databasePassword = System.getenv("DATABASE_PASSWORD") ?: "password"
+            ?: throw IllegalArgumentException("DATABASE_URL is not set")
+        val databaseUser = System.getenv("DATABASE_USER") 
+            ?: throw IllegalArgumentException("DATABASE_USER is not set")
+        val databasePassword = System.getenv("DATABASE_PASSWORD") 
+            ?: throw IllegalArgumentException("DATABASE_PASSWORD is not set")
         
         database = Database.connect(
             url = databaseUrl,
