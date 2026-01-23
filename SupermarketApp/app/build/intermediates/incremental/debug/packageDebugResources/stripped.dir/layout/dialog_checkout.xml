@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="#1E1E1E">
 
     <TextView
         android:id="@+id/tvAmount"
@@ -13,14 +14,16 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginBottom="16dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="M-Pesa Phone Number"
         android:textSize="14sp"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="8dp"
+        android:textColor="#FFFFFF" />
 
     <EditText
         android:id="@+id/etPhoneNumber"
@@ -28,16 +31,18 @@
         android:layout_height="48dp"
         android:hint="2547XXXXXXXX"
         android:inputType="phone"
-        android:background="@android:drawable/edit_text"
+        android:background="#2D2D2D"
         android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#888888" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="An M-Pesa STK push will be sent to this number. Please ensure you have sufficient funds."
         android:textSize="12sp"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="#AAAAAA"
         android:layout_marginBottom="16dp" />
 
 </LinearLayout>

@@ -22,6 +22,11 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages-jvm:2.3.8")
     implementation("io.ktor:ktor-server-request-validation-jvm:2.3.8")
     
+    // Ktor Client for M-Pesa API
+    implementation("io.ktor:ktor-client-core-jvm:2.3.8")
+    implementation("io.ktor:ktor-client-java-jvm:2.3.8")
+    implementation("io.ktor:ktor-client-content-negotiation-jvm:2.3.8")
+    
     // Database
     implementation("org.jetbrains.exposed:exposed-core:0.48.0")
     implementation("org.jetbrains.exposed:exposed-dao:0.48.0")
