@@ -174,8 +174,14 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
                 } catch (ex: Exception) {
                     // Fallback: try to extract CheckoutRequestID manually
                     val checkoutId = try {
-                        val tempMap = json.decodeFromString<Map<String, Any>>(responseBody)
-                        tempMap["CheckoutRequestID"]?.toString()
+                        // Parse as string and extract CheckoutRequestID using string manipulation
+                        if (responseBody.contains("\"CheckoutRequestID\"")) {
+                            val startIndex = responseBody.indexOf("\"CheckoutRequestID\":\"") + 20
+                            val endIndex = responseBody.indexOf("\"", startIndex)
+                            if (startIndex > 19 && endIndex > startIndex) {
+                                responseBody.substring(startIndex, endIndex)
+                            } else null
+                        } else null
                     } catch (ex: Exception) {
                         null
                     }
@@ -193,8 +199,20 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
             } catch (e: Exception) {
                 // Fallback: try to extract error message manually
                 val errorMessage = try {
-                    val tempMap = json.decodeFromString<Map<String, Any>>(responseBody)
-                    tempMap["errorMessage"]?.toString() ?: tempMap["ResponseDescription"]?.toString() ?: "Unknown error"
+                    // Parse as string and extract error messages using string manipulation
+                    when {
+                        responseBody.contains("\"errorMessage\"") -> {
+                            val startIndex = responseBody.indexOf("\"errorMessage\":\"") + 15
+                            val endIndex = responseBody.indexOf("\"", startIndex)
+                            if (startIndex > 14 && endIndex > startIndex) responseBody.substring(startIndex, endIndex) else "Unknown error"
+                        }
+                        responseBody.contains("\"ResponseDescription\"") -> {
+                            val startIndex = responseBody.indexOf("\"ResponseDescription\":\"") + 21
+                            val endIndex = responseBody.indexOf("\"", startIndex)
+                            if (startIndex > 20 && endIndex > startIndex) responseBody.substring(startIndex, endIndex) else "Unknown error"
+                        }
+                        else -> "Unknown error"
+                    }
                 } catch (ex: Exception) {
                     "Unknown error"
                 }
