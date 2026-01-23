@@ -122,32 +122,32 @@ class BranchAdapter(
                 "Nairobi" -> {
                     tvBranchAbbreviation.text = "HQ"
                     tvBranchAbbreviation.visibility = android.view.View.VISIBLE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FF0000")) // Red
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on red
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#2E86AB")) // Blue
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on blue
                 }
                 "Kisumu" -> {
                     tvBranchAbbreviation.visibility = android.view.View.GONE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FFA500")) // Orange
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on orange
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#A23B72")) // Purple
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on purple
                 }
                 "Mombasa" -> {
                     tvBranchAbbreviation.visibility = android.view.View.GONE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#008000")) // Green
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on green
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#F18F01")) // Orange
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on orange
                 }
                 "Nakuru" -> {
                     tvBranchAbbreviation.visibility = android.view.View.GONE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FF6B6B")) // Light red
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#C73E1D")) // Red
                     tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
                 "Eldoret" -> {
                     tvBranchAbbreviation.visibility = android.view.View.GONE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FFB366")) // Light orange
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#6A994E")) // Green
                     tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
                 else -> {
                     tvBranchAbbreviation.visibility = android.view.View.GONE
-                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#757575")) // Gray
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#5C5C5C")) // Gray
                     tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
             }

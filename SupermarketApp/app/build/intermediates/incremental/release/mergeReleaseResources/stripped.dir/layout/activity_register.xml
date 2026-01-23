@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@drawable/login_and_register_bg_picture">
+    android:background="@drawable/login_bg_picture">
 
     <View
         android:layout_width="match_parent"
