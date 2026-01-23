@@ -116,6 +116,35 @@ class SupermarketRepository {
         }
     }
     
+    suspend fun getAllBranchesStock(): Result<List<BranchStock>> {
+        return try {
+            val branchesResponse = apiService.getBranches()
+            if (!branchesResponse.isSuccessful || branchesResponse.body() == null) {
+                return Result.failure(Exception("Failed to fetch branches: ${branchesResponse.message()}"))
+            }
+            
+            val branches = branchesResponse.body()!!
+            val allBranchesStock = mutableListOf<BranchStock>()
+            
+            for (branch in branches) {
+                val stockResponse = getBranchStock(branch.id)
+                stockResponse.fold(
+                    onSuccess = { stocks ->
+                        allBranchesStock.add(BranchStock(branch.id, branch.name, stocks))
+                    },
+                    onFailure = { error ->
+                        // Continue with other branches even if one fails
+                        allBranchesStock.add(BranchStock(branch.id, branch.name, emptyList()))
+                    }
+                )
+            }
+            
+            Result.success(allBranchesStock)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+    
     suspend fun checkPaymentStatus(checkoutRequestId: String): Result<MpesaResponse> {
         return try {
             val response = apiService.checkPaymentStatus(checkoutRequestId)

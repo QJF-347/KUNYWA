@@ -76,6 +76,13 @@ data class StkPushErrorResponse(
 @Serializable
 data class DebugResponse(val users: List<User>, val branches: List<Branch>)
 
+// NEW: Add M-Pesa token response data class
+@Serializable
+data class MpesaTokenResponse(
+    val access_token: String,
+    val expires_in: String
+)
+
 // M-Pesa Configuration
 const val MPESA_CONSUMER_KEY = "upAZTWNlz1TvCOS5aijVToREKRoxRdelnGxw95Ux13Ermam5"
 const val MPESA_CONSUMER_SECRET = "2vADCUq1BzGG3HCnECD3h8fqrZwuR2i8zmtt6Vtqf9z8mc4JGx4ptSlcCLNlcIiU"
@@ -85,7 +92,7 @@ const val MPESA_CALLBACK_URL = "https://webhook.site/1ce723ac-ef61-4f40-95ef-33f
 
 val httpClient = HttpClient(Java)
 
-// M-Pesa Helper Functions
+// M-Pesa Helper Functions - FIXED VERSION
 suspend fun getMpesaAccessToken(): String? {
     return try {
         val credentials = Base64.getEncoder().encodeToString("$MPESA_CONSUMER_KEY:$MPESA_CONSUMER_SECRET".toByteArray())
@@ -104,9 +111,10 @@ suspend fun getMpesaAccessToken(): String? {
             return null
         }
         
+        // FIX: Use the MpesaTokenResponse data class for proper deserialization
         val json = Json { ignoreUnknownKeys = true }
-        val tokenResponse = json.decodeFromString<Map<String, String>>(responseBody)
-        tokenResponse["access_token"]
+        val tokenResponse = json.decodeFromString<MpesaTokenResponse>(responseBody.trim())
+        tokenResponse.access_token
     } catch (e: Exception) {
         println("Error getting M-Pesa access token: ${e.message}")
         e.printStackTrace()
@@ -166,8 +174,8 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
                 } catch (ex: Exception) {
                     // Fallback: try to extract CheckoutRequestID manually
                     val checkoutId = try {
-                        val tempMap = json.decodeFromString<Map<String, String>>(responseBody)
-                        tempMap["CheckoutRequestID"]
+                        val tempMap = json.decodeFromString<Map<String, Any>>(responseBody)
+                        tempMap["CheckoutRequestID"]?.toString()
                     } catch (ex: Exception) {
                         null
                     }
@@ -185,8 +193,8 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
             } catch (e: Exception) {
                 // Fallback: try to extract error message manually
                 val errorMessage = try {
-                    val tempMap = json.decodeFromString<Map<String, String>>(responseBody)
-                    tempMap["errorMessage"] ?: tempMap["ResponseDescription"] ?: "Unknown error"
+                    val tempMap = json.decodeFromString<Map<String, Any>>(responseBody)
+                    tempMap["errorMessage"]?.toString() ?: tempMap["ResponseDescription"]?.toString() ?: "Unknown error"
                 } catch (ex: Exception) {
                     "Unknown error"
                 }
