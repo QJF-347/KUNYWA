@@ -280,29 +280,29 @@ var saleIdCounter = 1
 
 fun initializeStocks() {
     stocks[1] = listOf(
-        Stock(1, 1, "Coke", 50, 120.0),
-        Stock(2, 2, "Fanta", 30, 120.0),
-        Stock(3, 3, "Sprite", 40, 120.0)
+        Stock(1, 1, "Coke", 50, 1.0),
+        Stock(2, 2, "Fanta", 30, 1.0),
+        Stock(3, 3, "Sprite", 40, 1.0)
     )
     stocks[2] = listOf(
-        Stock(4, 1, "Coke", 35, 120.0),
-        Stock(5, 2, "Fanta", 25, 120.0),
-        Stock(6, 3, "Sprite", 20, 120.0)
+        Stock(4, 1, "Coke", 35, 1.0),
+        Stock(5, 2, "Fanta", 25, 1.0),
+        Stock(6, 3, "Sprite", 20, 1.0)
     )
     stocks[3] = listOf(
-        Stock(7, 1, "Coke", 45, 120.0),
-        Stock(8, 2, "Fanta", 40, 120.0),
+        Stock(7, 1, "Coke", 45, 1.0),
+        Stock(8, 2, "Fanta", 40, 1.0),
         Stock(9, 3, "Sprite", 30, 120.0)
     )
     stocks[4] = listOf(
-        Stock(10, 1, "Coke", 65, 120.0),
-        Stock(11, 2, "Fanta", 48, 120.0),
-        Stock(12, 3, "Sprite", 17, 120.0)
+        Stock(10, 1, "Coke", 65, 1.0),
+        Stock(11, 2, "Fanta", 48, 1.0),
+        Stock(12, 3, "Sprite", 17, 1.0)
     )
     stocks[5] = listOf(
-        Stock(13, 1, "Coke", 55, 120.0),
-        Stock(14, 2, "Fanta", 34, 120.0),
-        Stock(15, 3, "Sprite", 32, 120.0)
+        Stock(13, 1, "Coke", 55, 1.0),
+        Stock(14, 2, "Fanta", 34, 1.0),
+        Stock(15, 3, "Sprite", 32, 1.0)
     )
 }
 
