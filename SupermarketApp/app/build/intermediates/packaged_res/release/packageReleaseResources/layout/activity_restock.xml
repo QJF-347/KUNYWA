@@ -6,184 +6,192 @@
     android:fillViewport="true"
     android:background="@drawable/login_bg_picture">
 
-    <View
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="24dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EE000000" />
 
-        <!-- Header -->
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="#CC333333">
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
 
-            <LinearLayout
+            <!-- Header -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:gravity="center">
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#DD333333">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📦 KUNYWA Restock"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/white"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Manage Inventory"
-                    android:textSize="14sp"
-                    android:textColor="@android:color/white" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Branch Selection -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#CC444444">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🏢 Select Branch"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#C73E1D"
-                    android:layout_marginBottom="8dp" />
-
-                <Spinner
-                    android:id="@+id/spinnerBranch"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="#222222"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📦 KUNYWA Restock"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="8dp" />
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manage Inventory"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white" />
 
-        <!-- Product Selection -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#CC444444">
+                </LinearLayout>
 
-            <LinearLayout
+            </androidx.cardview.widget.CardView>
+
+            <!-- Branch Selection -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#DD444444">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🥤 Select Product"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#F18F01"
-                    android:layout_marginBottom="8dp" />
-
-                <Spinner
-                    android:id="@+id/spinnerProduct"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="#222222"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏢 Select Branch"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#C73E1D"
+                        android:layout_marginBottom="8dp" />
 
-        </androidx.cardview.widget.CardView>
+                    <Spinner
+                        android:id="@+id/spinnerBranch"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="#222222"
+                        android:layout_marginBottom="8dp" />
 
-        <!-- Quantity Input -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#CC444444">
+                </LinearLayout>
 
-            <LinearLayout
+            </androidx.cardview.widget.CardView>
+
+            <!-- Product Selection -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#DD444444">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📊 Quantity to Add"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#6A994E"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
-                    android:id="@+id/etQuantity"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Enter quantity"
-                    android:inputType="number"
-                    android:background="#222222"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="#888888"
-                    android:padding="12dp"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🥤 Select Product"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#F18F01"
+                        android:layout_marginBottom="8dp" />
 
-        </androidx.cardview.widget.CardView>
+                    <Spinner
+                        android:id="@+id/spinnerProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="#222222"
+                        android:layout_marginBottom="8dp" />
 
-        <!-- Restock Button -->
-        <Button
-            android:id="@+id/btnRestock"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="🚚 Restock Inventory"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:backgroundTint="#C73E1D"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="16dp"
-            app:cornerRadius="12dp" />
+                </LinearLayout>
 
-        <!-- Progress Indicator -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginTop="16dp" />
+            </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
+            <!-- Quantity Input -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#DD444444">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📊 Quantity to Add"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#6A994E"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etQuantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:hint="Enter quantity"
+                        android:inputType="number"
+                        android:background="#222222"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="#888888"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Restock Button -->
+            <Button
+                android:id="@+id/btnRestock"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="🚚 Restock Inventory"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:backgroundTint="#C73E1D"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp"
+                app:cornerRadius="12dp" />
+
+            <!-- Progress Indicator -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="16dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 </ScrollView>
