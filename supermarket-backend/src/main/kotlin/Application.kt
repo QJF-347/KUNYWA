@@ -73,18 +73,27 @@ val httpClient = HttpClient(Java)
 suspend fun getMpesaAccessToken(): String? {
     return try {
         val credentials = Base64.getEncoder().encodeToString("$MPESA_CONSUMER_KEY:$MPESA_CONSUMER_SECRET".toByteArray())
-        val response = httpClient.post("https://sandbox.safaricom.co.ke/oauth/v1/generate") {
+        val response = httpClient.get("https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials") {
             headers {
                 append(HttpHeaders.Authorization, "Basic $credentials")
                 append(HttpHeaders.ContentType, "application/json")
             }
         }
         val responseBody = response.bodyAsText()
+        println("M-Pesa token response: $responseBody")
+        println("M-Pesa token status: ${response.status.value}")
+        
+        if (responseBody.isEmpty()) {
+            println("Empty response from M-Pesa token endpoint")
+            return null
+        }
+        
         val json = Json { ignoreUnknownKeys = true }
         val tokenResponse = json.decodeFromString<Map<String, String>>(responseBody)
         tokenResponse["access_token"]
     } catch (e: Exception) {
         println("Error getting M-Pesa access token: ${e.message}")
+        e.printStackTrace()
         null
     }
 }
