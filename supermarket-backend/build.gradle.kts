@@ -12,6 +12,11 @@ repositories {
     mavenCentral()
 }
 
+// Configure JVM memory for build
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "17"
+}
+
 dependencies {
     // Ktor
     implementation("io.ktor:ktor-server-core-jvm:2.3.8")
