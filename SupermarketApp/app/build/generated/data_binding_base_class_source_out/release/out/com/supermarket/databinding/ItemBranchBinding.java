@@ -20,19 +20,19 @@ public final class ItemBranchBinding implements ViewBinding {
   private final CardView rootView;
 
   @NonNull
-  public final TextView tvBranchAbbreviation;
+  public final CardView cardBranch;
 
   @NonNull
-  public final TextView tvBranchLocation;
+  public final TextView tvBranchAbbreviation;
 
   @NonNull
   public final TextView tvBranchName;
 
-  private ItemBranchBinding(@NonNull CardView rootView, @NonNull TextView tvBranchAbbreviation,
-      @NonNull TextView tvBranchLocation, @NonNull TextView tvBranchName) {
+  private ItemBranchBinding(@NonNull CardView rootView, @NonNull CardView cardBranch,
+      @NonNull TextView tvBranchAbbreviation, @NonNull TextView tvBranchName) {
     this.rootView = rootView;
+    this.cardBranch = cardBranch;
     this.tvBranchAbbreviation = tvBranchAbbreviation;
-    this.tvBranchLocation = tvBranchLocation;
     this.tvBranchName = tvBranchName;
   }
 
@@ -63,15 +63,11 @@ public final class ItemBranchBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      CardView cardBranch = (CardView) rootView;
+
       id = R.id.tvBranchAbbreviation;
       TextView tvBranchAbbreviation = ViewBindings.findChildViewById(rootView, id);
       if (tvBranchAbbreviation == null) {
-        break missingId;
-      }
-
-      id = R.id.tvBranchLocation;
-      TextView tvBranchLocation = ViewBindings.findChildViewById(rootView, id);
-      if (tvBranchLocation == null) {
         break missingId;
       }
 
@@ -81,7 +77,7 @@ public final class ItemBranchBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemBranchBinding((CardView) rootView, tvBranchAbbreviation, tvBranchLocation,
+      return new ItemBranchBinding((CardView) rootView, cardBranch, tvBranchAbbreviation,
           tvBranchName);
     }
     String missingId = rootView.getResources().getResourceName(id);

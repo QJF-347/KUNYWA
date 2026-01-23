@@ -100,6 +100,10 @@
         "source": "com.supermarket.app-main-42:/layout/activity_restock.xml"
     },
     {
+        "merged": "com.supermarket.app-release-41:/drawable_login_and_register_bg_picture.jpeg.flat",
+        "source": "com.supermarket.app-main-42:/drawable/login_and_register_bg_picture.jpeg"
+    },
+    {
         "merged": "com.supermarket.app-release-41:/drawable_coke.jpg.flat",
         "source": "com.supermarket.app-main-42:/drawable/coke.jpg"
     },

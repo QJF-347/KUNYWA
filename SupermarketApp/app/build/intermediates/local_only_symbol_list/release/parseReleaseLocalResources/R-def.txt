@@ -6,6 +6,7 @@ drawable coke
 drawable fanta
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable login_and_register_bg_picture
 drawable login_bg_picture
 drawable logo
 drawable sprite
@@ -21,6 +22,7 @@ id btnReports
 id btnRestock
 id btnSelectBranch
 id btnViewCart
+id cardBranch
 id etConfirmPassword
 id etEmail
 id etPassword
@@ -34,7 +36,6 @@ id recyclerView
 id spinnerBranch
 id spinnerProduct
 id tvBranchAbbreviation
-id tvBranchLocation
 id tvBranchName
 id tvCartBadge
 id tvGrandTotal

@@ -103,13 +103,13 @@ class CartActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         btnCheckout.setOnClickListener {
-            val cart = viewModel.cart.value ?: return@setOnClickListener
+            val cart = CartManager.cart.value
             if (cart.isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             
-            val totalAmount = viewModel.getCartTotal()
+            val totalAmount = CartManager.getCartTotal()
             val userPhone = preferencesManager.getString("user_phone", "254712345678") // Default for demo
             
             // Initiate M-Pesa payment

@@ -3085,6 +3085,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable login_and_register_bg_picture
 drawable login_bg_picture
 drawable logo
 drawable m3_avd_hide_password
@@ -3279,6 +3280,7 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
+id cardBranch
 id carryVelocity
 id center
 id centerCrop
@@ -3675,7 +3677,6 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvBranchAbbreviation
-id tvBranchLocation
 id tvBranchName
 id tvCartBadge
 id tvGrandTotal

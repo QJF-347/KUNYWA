@@ -111,44 +111,44 @@ class BranchAdapter(
     
     class BranchViewHolder(itemView: android.view.View, private val onBranchClick: (Branch) -> Unit) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         private val tvBranchName: TextView = itemView.findViewById(R.id.tvBranchName)
-        private val tvBranchLocation: TextView = itemView.findViewById(R.id.tvBranchLocation)
         private val tvBranchAbbreviation: TextView = itemView.findViewById(R.id.tvBranchAbbreviation)
+        private val cardBranch: androidx.cardview.widget.CardView = itemView.findViewById(R.id.cardBranch)
         
         fun bind(branch: Branch) {
             tvBranchName.text = branch.name
-            tvBranchLocation.text = branch.location
             
-            // Set branch abbreviation and colors
+            // Hide abbreviation for all branches except Nairobi
             when (branch.name) {
                 "Nairobi" -> {
                     tvBranchAbbreviation.text = "HQ"
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#2196F3")) // Blue
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#2196F3"))
+                    tvBranchAbbreviation.visibility = android.view.View.VISIBLE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FF0000")) // Red
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on red
                 }
                 "Kisumu" -> {
-                    tvBranchAbbreviation.text = "KS"
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#FF9800")) // Orange
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FF9800"))
+                    tvBranchAbbreviation.visibility = android.view.View.GONE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FFA500")) // Orange
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on orange
                 }
                 "Mombasa" -> {
-                    tvBranchAbbreviation.text = "MB"
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#4CAF50")) // Green
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#4CAF50"))
+                    tvBranchAbbreviation.visibility = android.view.View.GONE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#008000")) // Green
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text on green
                 }
                 "Nakuru" -> {
-                    tvBranchAbbreviation.text = "NK"
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#9C27B0")) // Purple
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#9C27B0"))
+                    tvBranchAbbreviation.visibility = android.view.View.GONE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FF6B6B")) // Light red
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
                 "Eldoret" -> {
-                    tvBranchAbbreviation.text = "ED"
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#F44336")) // Red
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#F44336"))
+                    tvBranchAbbreviation.visibility = android.view.View.GONE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#FFB366")) // Light orange
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
                 else -> {
-                    tvBranchAbbreviation.text = ""
-                    tvBranchAbbreviation.setBackgroundColor(android.graphics.Color.parseColor("#757575")) // Gray
-                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#757575"))
+                    tvBranchAbbreviation.visibility = android.view.View.GONE
+                    cardBranch.setCardBackgroundColor(android.graphics.Color.parseColor("#757575")) // Gray
+                    tvBranchName.setTextColor(android.graphics.Color.parseColor("#FFFFFF")) // White text
                 }
             }
             

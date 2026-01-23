@@ -115,16 +115,6 @@ fun main() {
                 call.respond(mapOf("status" to "healthy"))
             }
             
-            get("/create-admin-now") {
-                try {
-                    val adminUser = User(1, "admin", "admin")
-                    users.add(adminUser)
-                    call.respond(mapOf("message" to "Admin user created successfully", "user" to adminUser))
-                } catch (e: Exception) {
-                    call.respond(mapOf("error" to "Failed to create admin: ${e.message}"))
-                }
-            }
-            
             get("/debug") {
                 val debugResponse = DebugResponse(users, branches)
                 call.respond(debugResponse)
@@ -209,9 +199,25 @@ fun main() {
             post("/admin/restock") {
                 try {
                     val request = call.receive<RestockRequest>()
-                    call.respond(mapOf("success" to true))
+                    
+                    // Find the stock for the given branch and product
+                    val branchStocks = stocks[request.branchId]
+                    if (branchStocks != null) {
+                        val stock = branchStocks.find { it.productId == request.productId }
+                        if (stock != null) {
+                            // Update the stock quantity
+                            val updatedStock = stock.copy(quantity = stock.quantity + request.quantity)
+                            val updatedStocks = branchStocks.map { if (it.id == stock.id) updatedStock else it }
+                            stocks[request.branchId] = updatedStocks
+                            call.respond(mapOf("success" to true, "newQuantity" to updatedStock.quantity))
+                        } else {
+                            call.respond(mapOf("error" to "Product not found in branch"))
+                        }
+                    } else {
+                        call.respond(mapOf("error" to "Branch not found"))
+                    }
                 } catch (e: Exception) {
-                    call.respond(mapOf("error" to "Restock failed"))
+                    call.respond(mapOf("error" to "Restock failed: ${e.message}"))
                 }
             }
             
