@@ -61,8 +61,8 @@ data class MpesaResponse(val success: Boolean, val message: String, val checkout
 data class DebugResponse(val users: List<User>, val branches: List<Branch>)
 
 // M-Pesa Configuration
-const val MPESA_CONSUMER_KEY = "6U8UmjMUtn7MgUs2FiFEU9wG0GhrSNXSXMaXw5ikxnIzzlaG"
-const val MPESA_CONSUMER_SECRET = "PaM9cBZpk9MC2NEFXQChRmMvS21mebZUMMpRZYdVxUVmrApdkEwvXImJVV8vhxcG"
+const val MPESA_CONSUMER_KEY = "upAZTWNlz1TvCOS5aijVToREKRoxRdelnGxw95Ux13Ermam5"
+const val MPESA_CONSUMER_SECRET = "2vADCUq1BzGG3HCnECD3h8fqrZwuR2i8zmtt6Vtqf9z8mc4JGx4ptSlcCLNlcIiU"
 const val MPESA_SHORTCODE = "174379"
 const val MPESA_PASSKEY = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
 const val MPESA_CALLBACK_URL = "https://webhook.site/1ce723ac-ef61-4f40-95ef-33f7f5c0c28f"
