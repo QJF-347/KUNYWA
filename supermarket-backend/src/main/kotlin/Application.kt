@@ -58,6 +58,22 @@ data class MpesaRequest(val phoneNumber: String, val amount: Double, val account
 data class MpesaResponse(val success: Boolean, val message: String, val checkoutRequestId: String? = null)
 
 @Serializable
+data class StkPushResponse(
+    val MerchantRequestID: String? = null,
+    val CheckoutRequestID: String? = null,
+    val ResponseCode: String? = null,
+    val ResponseDescription: String? = null,
+    val CustomerMessage: String? = null
+)
+
+@Serializable
+data class StkPushErrorResponse(
+    val requestId: String? = null,
+    val errorCode: String? = null,
+    val errorMessage: String? = null
+)
+
+@Serializable
 data class DebugResponse(val users: List<User>, val branches: List<Branch>)
 
 // M-Pesa Configuration
@@ -137,14 +153,45 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
 
         val responseBody = response.bodyAsText()
         val json = Json { ignoreUnknownKeys = true }
-        val responseMap = json.decodeFromString<Map<String, Any>>(responseBody)
         
         if (response.status.value == 200) {
-            val checkoutRequestId = responseMap["CheckoutRequestID"]?.toString()
-            MpesaResponse(true, "STK Push sent successfully", checkoutRequestId)
+            try {
+                val responseMap = json.decodeFromString<StkPushResponse>(responseBody)
+                MpesaResponse(true, "STK Push sent successfully", responseMap.CheckoutRequestID)
+            } catch (e: Exception) {
+                // Try to parse as error response
+                try {
+                    val errorResponse = json.decodeFromString<StkPushErrorResponse>(responseBody)
+                    MpesaResponse(false, errorResponse.errorMessage ?: "Unknown error")
+                } catch (ex: Exception) {
+                    // Fallback: try to extract CheckoutRequestID manually
+                    val checkoutId = try {
+                        val tempMap = json.decodeFromString<Map<String, String>>(responseBody)
+                        tempMap["CheckoutRequestID"]
+                    } catch (ex: Exception) {
+                        null
+                    }
+                    if (checkoutId != null) {
+                        MpesaResponse(true, "STK Push sent successfully", checkoutId)
+                    } else {
+                        MpesaResponse(false, "Failed to parse M-Pesa response")
+                    }
+                }
+            }
         } else {
-            val errorMessage = responseMap["errorMessage"]?.toString() ?: "Unknown error"
-            MpesaResponse(false, errorMessage)
+            try {
+                val errorResponse = json.decodeFromString<StkPushErrorResponse>(responseBody)
+                MpesaResponse(false, errorResponse.errorMessage ?: "Unknown error")
+            } catch (e: Exception) {
+                // Fallback: try to extract error message manually
+                val errorMessage = try {
+                    val tempMap = json.decodeFromString<Map<String, String>>(responseBody)
+                    tempMap["errorMessage"] ?: tempMap["ResponseDescription"] ?: "Unknown error"
+                } catch (ex: Exception) {
+                    "Unknown error"
+                }
+                MpesaResponse(false, errorMessage)
+            }
         }
     } catch (e: Exception) {
         println("Error initiating STK push: ${e.message}")
