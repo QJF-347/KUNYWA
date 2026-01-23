@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class Sale(
     @SerializedName("id")
     val id: Int,
+    @SerializedName("branchId")
+    val branchId: Int,
     @SerializedName("items")
     val items: List<SaleItem>,
     @SerializedName("total")

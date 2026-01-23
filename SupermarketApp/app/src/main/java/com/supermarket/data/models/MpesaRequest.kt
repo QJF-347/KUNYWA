@@ -26,7 +26,9 @@ data class SaleRequest(
     @SerializedName("branchId")
     val branchId: Int,
     @SerializedName("items")
-    val items: List<SaleItem>
+    val items: List<SaleItem>,
+    @SerializedName("total")
+    val total: Double
 )
 
 data class SaleItem(

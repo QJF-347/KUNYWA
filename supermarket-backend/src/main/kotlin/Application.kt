@@ -10,6 +10,16 @@ import io.ktor.server.response.*
 import io.ktor.server.request.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.Serializable
+import io.ktor.client.*
+import io.ktor.client.engine.java.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.encodeToString
+import java.util.Base64
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 @Serializable
 data class User(val id: Int, val username: String, val role: String)
@@ -30,7 +40,10 @@ data class Stock(val id: Int, val productId: Int, val productName: String, val q
 data class SaleItem(val productId: Int, val quantity: Int)
 
 @Serializable
-data class Sale(val id: Int, val items: List<SaleItem>, val total: Double)
+data class SaleRequest(val branchId: Int, val items: List<SaleItem>, val total: Double)
+
+@Serializable
+data class Sale(val id: Int, val branchId: Int, val items: List<SaleItem>, val total: Double)
 
 @Serializable
 data class RestockRequest(val branchId: Int, val productId: Int, val quantity: Int)
@@ -46,6 +59,84 @@ data class MpesaResponse(val success: Boolean, val message: String, val checkout
 
 @Serializable
 data class DebugResponse(val users: List<User>, val branches: List<Branch>)
+
+// M-Pesa Configuration
+const val MPESA_CONSUMER_KEY = "6U8UmjMUtn7MgUs2FiFEU9wG0GhrSNXSXMaXw5ikxnIzzlaG"
+const val MPESA_CONSUMER_SECRET = "PaM9cBZpk9MC2NEFXQChRmMvS21mebZUMMpRZYdVxUVmrApdkEwvXImJVV8vhxcG"
+const val MPESA_SHORTCODE = "174379"
+const val MPESA_PASSKEY = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
+const val MPESA_CALLBACK_URL = "https://webhook.site/1ce723ac-ef61-4f40-95ef-33f7f5c0c28f"
+
+val httpClient = HttpClient(Java)
+
+// M-Pesa Helper Functions
+suspend fun getMpesaAccessToken(): String? {
+    return try {
+        val credentials = Base64.getEncoder().encodeToString("$MPESA_CONSUMER_KEY:$MPESA_CONSUMER_SECRET".toByteArray())
+        val response = httpClient.post("https://sandbox.safaricom.co.ke/oauth/v1/generate") {
+            headers {
+                append(HttpHeaders.Authorization, "Basic $credentials")
+                append(HttpHeaders.ContentType, "application/json")
+            }
+        }
+        val responseBody = response.bodyAsText()
+        val json = Json { ignoreUnknownKeys = true }
+        val tokenResponse = json.decodeFromString<Map<String, String>>(responseBody)
+        tokenResponse["access_token"]
+    } catch (e: Exception) {
+        println("Error getting M-Pesa access token: ${e.message}")
+        null
+    }
+}
+
+suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String): MpesaResponse {
+    return try {
+        val accessToken = getMpesaAccessToken()
+        if (accessToken == null) {
+            return MpesaResponse(false, "Failed to get M-Pesa access token")
+        }
+
+        val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+        val password = Base64.getEncoder().encodeToString("$MPESA_SHORTCODE$MPESA_PASSKEY$timestamp".toByteArray())
+
+        val stkPushRequest = mapOf(
+            "BusinessShortCode" to MPESA_SHORTCODE,
+            "Password" to password,
+            "Timestamp" to timestamp,
+            "TransactionType" to "CustomerPayBillOnline",
+            "Amount" to amount.toInt(),
+            "PartyA" to phoneNumber,
+            "PartyB" to MPESA_SHORTCODE,
+            "PhoneNumber" to phoneNumber,
+            "CallBackURL" to MPESA_CALLBACK_URL,
+            "AccountReference" to accountReference,
+            "TransactionDesc" to transactionDesc
+        )
+
+        val response = httpClient.post("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest") {
+            headers {
+                append(HttpHeaders.Authorization, "Bearer $accessToken")
+                append(HttpHeaders.ContentType, "application/json")
+            }
+            setBody(Json.encodeToString(stkPushRequest))
+        }
+
+        val responseBody = response.bodyAsText()
+        val json = Json { ignoreUnknownKeys = true }
+        val responseMap = json.decodeFromString<Map<String, Any>>(responseBody)
+        
+        if (response.status.value == 200) {
+            val checkoutRequestId = responseMap["CheckoutRequestID"]?.toString()
+            MpesaResponse(true, "STK Push sent successfully", checkoutRequestId)
+        } else {
+            val errorMessage = responseMap["errorMessage"]?.toString() ?: "Unknown error"
+            MpesaResponse(false, errorMessage)
+        }
+    } catch (e: Exception) {
+        println("Error initiating STK push: ${e.message}")
+        MpesaResponse(false, "Failed to initiate STK push: ${e.message}")
+    }
+}
 
 val users = mutableListOf<User>()
 val branches = listOf(
@@ -187,12 +278,44 @@ fun main() {
             
             post("/customer/sales") {
                 try {
-                    val request = call.receive<Sale>()
-                    val newSale = Sale(saleIdCounter++, request.items, request.total)
+                    val request = call.receive<SaleRequest>()
+                    
+                    // Check if all items have sufficient stock
+                    val branchStocks = stocks[request.branchId]
+                    if (branchStocks == null) {
+                        call.respond(mapOf("error" to "Branch not found"))
+                        return@post
+                    }
+                    
+                    for (item in request.items) {
+                        val stock = branchStocks.find { it.productId == item.productId }
+                        if (stock == null) {
+                            call.respond(mapOf("error" to "Product with ID ${item.productId} not found in branch"))
+                            return@post
+                        }
+                        if (stock.quantity < item.quantity) {
+                            call.respond(mapOf("error" to "Insufficient stock for product ${stock.productName}. Available: ${stock.quantity}, Requested: ${item.quantity}"))
+                            return@post
+                        }
+                    }
+                    
+                    // Reduce stock quantities
+                    val updatedStocks = branchStocks.map { stock ->
+                        val saleItem = request.items.find { it.productId == stock.productId }
+                        if (saleItem != null) {
+                            stock.copy(quantity = stock.quantity - saleItem.quantity)
+                        } else {
+                            stock
+                        }
+                    }
+                    stocks[request.branchId] = updatedStocks
+                    
+                    // Create the sale
+                    val newSale = Sale(saleIdCounter++, request.branchId, request.items, request.total)
                     sales.add(newSale)
                     call.respond(newSale)
                 } catch (e: Exception) {
-                    call.respond(mapOf("error" to "Sale creation failed"))
+                    call.respond(mapOf("error" to "Sale creation failed: ${e.message}"))
                 }
             }
             
@@ -230,14 +353,15 @@ fun main() {
             post("/mpesa/stk-push") {
                 try {
                     val request = call.receive<MpesaRequest>()
-                    val response = MpesaResponse(
-                        success = true,
-                        message = "STK Push sent successfully",
-                        checkoutRequestId = "ws_CO_${System.currentTimeMillis()}"
+                    val response = initiateStkPush(
+                        phoneNumber = request.phoneNumber,
+                        amount = request.amount,
+                        accountReference = request.accountReference,
+                        transactionDesc = request.transactionDesc
                     )
                     call.respond(response)
                 } catch (e: Exception) {
-                    call.respond(mapOf("error" to "M-Pesa payment failed"))
+                    call.respond(MpesaResponse(false, "M-Pesa payment failed: ${e.message}"))
                 }
             }
             

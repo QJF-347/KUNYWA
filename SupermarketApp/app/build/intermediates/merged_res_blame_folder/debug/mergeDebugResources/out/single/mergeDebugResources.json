@@ -1,0 +1,150 @@
+[
+    {
+        "merged": "com.supermarket.app-debug-41:/xml_backup_rules.xml.flat",
+        "source": "com.supermarket.app-main-43:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_main.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_customer_dashboard.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_customer_dashboard.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_login_bg_picture.jpeg.flat",
+        "source": "com.supermarket.app-main-43:/drawable/login_bg_picture.jpeg"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_logo.jpg.flat",
+        "source": "com.supermarket.app-main-43:/drawable/logo.jpg"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_login.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_cart_badge_background.xml.flat",
+        "source": "com.supermarket.app-main-43:/drawable/cart_badge_background.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/xml_network_security_config.xml.flat",
+        "source": "com.supermarket.app-main-43:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_item_product.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/item_product.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_sprite.jpg.flat",
+        "source": "com.supermarket.app-main-43:/drawable/sprite.jpg"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/xml_data_extraction_rules.xml.flat",
+        "source": "com.supermarket.app-main-43:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_coke.jpg.flat",
+        "source": "com.supermarket.app-main-43:/drawable/coke.jpg"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_dialog_checkout.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/dialog_checkout.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_admin_dashboard.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_admin_dashboard.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_item_branch.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/item_branch.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_branch_badge_background.xml.flat",
+        "source": "com.supermarket.app-main-43:/drawable/branch_badge_background.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_register.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_product_list.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_product_list.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_restock.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_restock.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_branch_selection.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_branch_selection.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_item_report.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/item_report.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_cart.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_cart.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.supermarket.app-main-43:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.supermarket.app-main-43:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_item_cart.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/item_cart.xml"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/drawable_fanta.jpg.flat",
+        "source": "com.supermarket.app-main-43:/drawable/fanta.jpg"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.supermarket.app-main-43:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.supermarket.app-debug-41:/layout_activity_reports.xml.flat",
+        "source": "com.supermarket.app-main-43:/layout/activity_reports.xml"
+    }
+]

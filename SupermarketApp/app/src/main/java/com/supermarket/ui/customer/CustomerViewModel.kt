@@ -109,4 +109,14 @@ class CustomerViewModel : ViewModel() {
             _isLoading.value = false
         }
     }
+    
+    fun createSale(branchId: Int, saleItems: List<SaleItem>) {
+        _isLoading.value = true
+        
+        viewModelScope.launch {
+            val result = repository.createSale(branchId, saleItems)
+            _saleResult.value = result
+            _isLoading.value = false
+        }
+    }
 }

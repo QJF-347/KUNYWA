@@ -61,7 +61,11 @@ class SupermarketRepository {
     
     suspend fun createSale(branchId: Int, items: List<com.supermarket.data.models.SaleItem>): Result<Sale> {
         return try {
-            val response = apiService.createSale(SaleRequest(branchId, items))
+            val total = items.sumOf { 
+                // This is a simplified calculation - in a real app, you'd fetch product prices
+                120.0 * it.quantity // Assuming fixed price for now
+            }
+            val response = apiService.createSale(SaleRequest(branchId, items, total))
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else {

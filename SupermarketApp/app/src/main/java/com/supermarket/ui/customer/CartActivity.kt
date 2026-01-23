@@ -18,6 +18,7 @@ import com.supermarket.data.models.MpesaResponse
 import com.supermarket.utils.MpesaManager
 import com.supermarket.utils.CartManager
 import com.supermarket.utils.PreferencesManager
+import kotlinx.coroutines.launch
 
 class CartActivity : AppCompatActivity() {
     
@@ -77,10 +78,15 @@ class CartActivity : AppCompatActivity() {
     }
     
     private fun setupObservers() {
-        // Simple cart observation using CartManager
-        val cart = CartManager.cart.value
-        cartAdapter.submitList(cart)
-        tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
+        // Observe CartManager changes
+        lifecycleScope.launch {
+            repeatOnLifecycle(androidx.lifecycle.Lifecycle.State.STARTED) {
+                CartManager.cart.collect { cart ->
+                    cartAdapter.submitList(cart)
+                    tvTotalAmount.text = "Total: KES ${CartManager.getCartTotal()}"
+                }
+            }
+        }
         
         viewModel.saleResult.observe(this) { result ->
             result.fold(
@@ -103,32 +109,66 @@ class CartActivity : AppCompatActivity() {
     
     private fun setupClickListeners() {
         btnCheckout.setOnClickListener {
-            val cart = CartManager.cart.value
-            if (cart.isEmpty()) {
-                Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            
-            val totalAmount = CartManager.getCartTotal()
-            val userPhone = preferencesManager.getString("user_phone", "254712345678") // Default for demo
-            
-            // Initiate M-Pesa payment
-            mpesaManager.initiatePayment(
-                phoneNumber = userPhone,
-                amount = totalAmount,
-                accountReference = "SUPERMARKET-$branchId",
-                transactionDesc = "Purchase at $branchName",
-                onPaymentInitiated = { response ->
-                    if (response.success) {
-                        // Check payment status
-                        checkPaymentStatus(response.checkoutRequestId ?: "")
-                    }
-                },
-                onPaymentFailed = { error ->
-                    Toast.makeText(this, "Payment initiation failed: $error", Toast.LENGTH_LONG).show()
-                }
-            )
+            showCheckoutDialog()
         }
+    }
+    
+    private fun showCheckoutDialog() {
+        val cart = CartManager.cart.value
+        if (cart.isEmpty()) {
+            Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show()
+            return
+        }
+        
+        val totalAmount = CartManager.getCartTotal()
+        val userPhone = preferencesManager.getString("user_phone", "254712345678")
+        
+        // Create dialog for phone number input
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_checkout, null)
+        
+        val etPhoneNumber = dialogView.findViewById<android.widget.EditText>(R.id.etPhoneNumber)
+        val tvAmount = dialogView.findViewById<android.widget.TextView>(R.id.tvAmount)
+        
+        etPhoneNumber.setText(userPhone)
+        tvAmount.text = "Total Amount: KES $totalAmount"
+        
+        builder.setView(dialogView)
+            .setTitle("Complete Purchase")
+            .setPositiveButton("Proceed with M-Pesa") { _, _ ->
+                val phoneNumber = etPhoneNumber.text.toString().trim()
+                if (phoneNumber.isEmpty()) {
+                    Toast.makeText(this, "Please enter phone number", Toast.LENGTH_SHORT).show()
+                    return@setPositiveButton
+                }
+                
+                // Save the phone number for future use
+                preferencesManager.saveString("user_phone", phoneNumber)
+                
+                // Initiate M-Pesa payment
+                initiateMpesaPayment(phoneNumber, totalAmount)
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
+    }
+    
+    private fun initiateMpesaPayment(phoneNumber: String, totalAmount: Double) {
+        mpesaManager.initiatePayment(
+            phoneNumber = phoneNumber,
+            amount = totalAmount,
+            accountReference = "SUPERMARKET-$branchId",
+            transactionDesc = "Purchase at $branchName",
+            onPaymentInitiated = { response ->
+                if (response.success) {
+                    // Check payment status
+                    checkPaymentStatus(response.checkoutRequestId ?: "")
+                }
+            },
+            onPaymentFailed = { error ->
+                Toast.makeText(this, "Payment initiation failed: $error", Toast.LENGTH_LONG).show()
+            }
+        )
     }
     
     private fun checkPaymentStatus(checkoutRequestId: String) {
@@ -136,8 +176,12 @@ class CartActivity : AppCompatActivity() {
             checkoutRequestId = checkoutRequestId,
             onStatusReceived = { response ->
                 if (response.success && response.message.contains("completed", ignoreCase = true)) {
-                    // Payment successful, complete the sale
-                    viewModel.checkout(branchId)
+                    // Payment successful, complete the sale using CartManager data
+                    val cartItems = CartManager.cart.value.map { 
+                        com.supermarket.data.models.SaleItem(it.product.id, it.quantity) 
+                    }
+                    
+                    viewModel.createSale(branchId, cartItems)
                 } else {
                     Toast.makeText(this, "Payment failed or incomplete", Toast.LENGTH_LONG).show()
                 }
@@ -161,7 +205,7 @@ class CartAdapter(
     }
     
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onIncreaseQuantity, onDecreaseQuantity)
     }
     
     class CartViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
@@ -172,18 +216,18 @@ class CartAdapter(
         private val btnDecrease: TextView = itemView.findViewById(R.id.btnDecrease)
         private val tvItemTotal: TextView = itemView.findViewById(R.id.tvItemTotal)
         
-        fun bind(cartItem: CartItem) {
+        fun bind(cartItem: CartItem, onIncreaseQuantity: (CartItem) -> Unit, onDecreaseQuantity: (CartItem) -> Unit) {
             tvProductName.text = cartItem.product.name
             tvProductPrice.text = "KES ${cartItem.product.price}"
             tvQuantity.text = cartItem.quantity.toString()
             tvItemTotal.text = "KES ${cartItem.getTotalPrice()}"
             
             btnIncrease.setOnClickListener {
-                // Handle increase
+                onIncreaseQuantity(cartItem)
             }
             
             btnDecrease.setOnClickListener {
-                // Handle decrease
+                onDecreaseQuantity(cartItem)
             }
         }
     }
