@@ -10,7 +10,11 @@ data class MpesaRequest(
     @SerializedName("accountReference")
     val accountReference: String,
     @SerializedName("transactionDesc")
-    val transactionDesc: String
+    val transactionDesc: String,
+    @SerializedName("branchId")
+    val branchId: Int? = null,
+    @SerializedName("items")
+    val items: List<SaleItem>? = null
 )
 
 data class MpesaResponse(

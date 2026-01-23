@@ -154,15 +154,27 @@ class CartActivity : AppCompatActivity() {
     }
     
     private fun initiateMpesaPayment(phoneNumber: String, totalAmount: Double) {
+        // Get cart items for immediate stock reduction
+        val cartItems = CartManager.cart.value.map { 
+            com.supermarket.data.models.SaleItem(it.product.id, it.quantity) 
+        }
+        
         mpesaManager.initiatePayment(
             phoneNumber = phoneNumber,
             amount = totalAmount,
             accountReference = "SUPERMARKET-$branchId",
             transactionDesc = "Purchase at $branchName",
+            branchId = branchId,
+            items = cartItems,
             onPaymentInitiated = { response ->
                 if (response.success) {
-                    // Check payment status
-                    checkPaymentStatus(response.checkoutRequestId ?: "")
+                    // Stock is already reduced on backend, just show success message
+                    Toast.makeText(this, "M-Pesa STK Push sent! Stock reserved.", Toast.LENGTH_LONG).show()
+                    // Clear cart and finish activity
+                    CartManager.clearCart()
+                    finish()
+                } else {
+                    Toast.makeText(this, "Payment initiation failed: ${response.message}", Toast.LENGTH_LONG).show()
                 }
             },
             onPaymentFailed = { error ->

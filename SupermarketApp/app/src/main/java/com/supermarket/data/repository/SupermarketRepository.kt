@@ -102,9 +102,10 @@ class SupermarketRepository {
         }
     }
     
-    suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String): Result<MpesaResponse> {
+    suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String, branchId: Int? = null, items: List<com.supermarket.data.models.SaleItem>? = null): Result<MpesaResponse> {
         return try {
-            val response = apiService.initiateStkPush(MpesaRequest(phoneNumber, amount, accountReference, transactionDesc))
+            val request = MpesaRequest(phoneNumber, amount, accountReference, transactionDesc, branchId, items)
+            val response = apiService.initiateStkPush(request)
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else {

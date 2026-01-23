@@ -52,7 +52,7 @@ data class RestockRequest(val branchId: Int, val productId: Int, val quantity: I
 data class OverallReport(val totalSales: Double, val totalOrders: Int)
 
 @Serializable
-data class MpesaRequest(val phoneNumber: String, val amount: Double, val accountReference: String, val transactionDesc: String)
+data class MpesaRequest(val phoneNumber: String, val amount: Double, val accountReference: String, val transactionDesc: String, val branchId: Int? = null, val items: List<SaleItem>? = null)
 
 @Serializable
 data class MpesaResponse(val success: Boolean, val message: String, val checkoutRequestId: String? = null)
@@ -89,8 +89,13 @@ suspend fun getMpesaAccessToken(): String? {
     }
 }
 
-suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String): MpesaResponse {
+suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReference: String, transactionDesc: String, branchId: Int? = null, items: List<SaleItem>? = null): MpesaResponse {
     return try {
+        // Reduce stock immediately if branchId and items are provided
+        if (branchId != null && items != null) {
+            reduceStockImmediately(branchId, items)
+        }
+
         val accessToken = getMpesaAccessToken()
         if (accessToken == null) {
             return MpesaResponse(false, "Failed to get M-Pesa access token")
@@ -135,6 +140,31 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
     } catch (e: Exception) {
         println("Error initiating STK push: ${e.message}")
         MpesaResponse(false, "Failed to initiate STK push: ${e.message}")
+    }
+}
+
+fun reduceStockImmediately(branchId: Int, items: List<SaleItem>) {
+    try {
+        val branchStocks = stocks[branchId]
+        if (branchStocks != null) {
+            val updatedStocks = branchStocks.map { stock ->
+                val saleItem = items.find { it.productId == stock.productId }
+                if (saleItem != null) {
+                    val newQuantity = stock.quantity - saleItem.quantity
+                    if (newQuantity >= 0) {
+                        stock.copy(quantity = newQuantity)
+                    } else {
+                        stock // Don't allow negative stock
+                    }
+                } else {
+                    stock
+                }
+            }
+            stocks[branchId] = updatedStocks
+            println("Stock reduced immediately for branch $branchId")
+        }
+    } catch (e: Exception) {
+        println("Error reducing stock: ${e.message}")
     }
 }
 
@@ -357,7 +387,9 @@ fun main() {
                         phoneNumber = request.phoneNumber,
                         amount = request.amount,
                         accountReference = request.accountReference,
-                        transactionDesc = request.transactionDesc
+                        transactionDesc = request.transactionDesc,
+                        branchId = request.branchId,
+                        items = request.items
                     )
                     call.respond(response)
                 } catch (e: Exception) {

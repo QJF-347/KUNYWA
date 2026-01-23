@@ -18,6 +18,8 @@ class MpesaManager(private val context: Context) {
         amount: Double,
         accountReference: String,
         transactionDesc: String,
+        branchId: Int? = null,
+        items: List<com.supermarket.data.models.SaleItem>? = null,
         onPaymentInitiated: (MpesaResponse) -> Unit,
         onPaymentFailed: (String) -> Unit
     ) {
@@ -34,7 +36,7 @@ class MpesaManager(private val context: Context) {
                     "254$phoneNumber"
                 }
                 
-                val result = repository.initiateStkPush(formattedPhone, amount, accountReference, transactionDesc)
+                val result = repository.initiateStkPush(formattedPhone, amount, accountReference, transactionDesc, branchId, items)
                 
                 withContext(Dispatchers.Main) {
                     result.fold(
