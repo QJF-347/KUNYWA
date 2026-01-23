@@ -74,6 +74,21 @@ data class StkPushErrorResponse(
 )
 
 @Serializable
+data class StkPushRequest(
+    val BusinessShortCode: String,
+    val Password: String,
+    val Timestamp: String,
+    val TransactionType: String,
+    val Amount: Int,
+    val PartyA: String,
+    val PartyB: String,
+    val PhoneNumber: String,
+    val CallBackURL: String,
+    val AccountReference: String,
+    val TransactionDesc: String
+)
+
+@Serializable
 data class DebugResponse(val users: List<User>, val branches: List<Branch>)
 
 // NEW: Add M-Pesa token response data class
@@ -137,18 +152,18 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
         val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
         val password = Base64.getEncoder().encodeToString("$MPESA_SHORTCODE$MPESA_PASSKEY$timestamp".toByteArray())
 
-        val stkPushRequest = mapOf(
-            "BusinessShortCode" to MPESA_SHORTCODE,
-            "Password" to password,
-            "Timestamp" to timestamp,
-            "TransactionType" to "CustomerPayBillOnline",
-            "Amount" to amount.toInt(),
-            "PartyA" to phoneNumber,
-            "PartyB" to MPESA_SHORTCODE,
-            "PhoneNumber" to phoneNumber,
-            "CallBackURL" to MPESA_CALLBACK_URL,
-            "AccountReference" to accountReference,
-            "TransactionDesc" to transactionDesc
+        val stkPushRequest = StkPushRequest(
+            BusinessShortCode = MPESA_SHORTCODE,
+            Password = password,
+            Timestamp = timestamp,
+            TransactionType = "CustomerPayBillOnline",
+            Amount = amount.toInt(),
+            PartyA = phoneNumber,
+            PartyB = MPESA_SHORTCODE,
+            PhoneNumber = phoneNumber,
+            CallBackURL = MPESA_CALLBACK_URL,
+            AccountReference = accountReference,
+            TransactionDesc = transactionDesc
         )
 
         val response = httpClient.post("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest") {
