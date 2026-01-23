@@ -58,43 +58,6 @@ data class MpesaRequest(val phoneNumber: String, val amount: Double, val account
 data class MpesaResponse(val success: Boolean, val message: String, val checkoutRequestId: String? = null)
 
 @Serializable
-data class StkPushRequest(
-    @SerialName("BusinessShortCode")
-    val businessShortCode: String,
-
-    @SerialName("Password")
-    val password: String,
-
-    @SerialName("Timestamp")
-    val timestamp: String,
-
-    @SerialName("TransactionType")
-    val transactionType: String = "CustomerPayBillOnline",
-
-    @SerialName("Amount")
-    val amount: Int,
-
-    @SerialName("PartyA")
-    val partyA: String,
-
-    @SerialName("PartyB")
-    val partyB: String,
-
-    @SerialName("PhoneNumber")
-    val phoneNumber: String,
-
-    @SerialName("CallBackURL")
-    val callBackURL: String,
-
-    @SerialName("AccountReference")
-    val accountReference: String,
-
-    @SerialName("TransactionDesc")
-    val transactionDesc: String
-)
-
-
-@Serializable
 data class StkPushResponse(
     val MerchantRequestID: String? = null,
     val CheckoutRequestID: String? = null,
@@ -174,29 +137,27 @@ suspend fun initiateStkPush(phoneNumber: String, amount: Double, accountReferenc
         val timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
         val password = Base64.getEncoder().encodeToString("$MPESA_SHORTCODE$MPESA_PASSKEY$timestamp".toByteArray())
 
-       
-
-        val stkPushRequest = StkPushRequest(
-            businessShortCode = MPESA_SHORTCODE,
-            password = password,
-            timestamp = timestamp,
-            amount = amount.toInt(),
-            partyA = phoneNumber,
-            partyB = MPESA_SHORTCODE,
-            phoneNumber = phoneNumber,
-            callBackURL = MPESA_CALLBACK_URL,
-            accountReference = accountReference,
-            transactionDesc = transactionDesc
+        val stkPushRequest = mapOf(
+            "BusinessShortCode" to MPESA_SHORTCODE,
+            "Password" to password,
+            "Timestamp" to timestamp,
+            "TransactionType" to "CustomerPayBillOnline",
+            "Amount" to amount.toInt(),
+            "PartyA" to phoneNumber,
+            "PartyB" to MPESA_SHORTCODE,
+            "PhoneNumber" to phoneNumber,
+            "CallBackURL" to MPESA_CALLBACK_URL,
+            "AccountReference" to accountReference,
+            "TransactionDesc" to transactionDesc
         )
 
-        val response = httpClient.post(
-                "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
-            ) {
-                header(HttpHeaders.Authorization, "Bearer $accessToken")
-                contentType(ContentType.Application.Json)
-                setBody(stkPushRequest)
+        val response = httpClient.post("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest") {
+            headers {
+                append(HttpHeaders.Authorization, "Bearer $accessToken")
+                append(HttpHeaders.ContentType, "application/json")
             }
-
+            setBody(Json.encodeToString(stkPushRequest))
+        }
 
         val responseBody = response.bodyAsText()
         val json = Json { ignoreUnknownKeys = true }
